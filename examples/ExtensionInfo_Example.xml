@@ -1,0 +1,8 @@
+<HacknetExtension>
+
+    <Name>Cool Extension</Name>
+    <AllowSaves>true</AllowSaves>
+    <StartingNodes>jmail,coolStartingNode</StartingNodes>
+    <StartingMission>Missions/CoolMission.xml</StartingMission>
+    
+</HacknetExtension>

@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="database" name="GitLine" type="4" icon="DLCServer" security="2" ip="" allowsDefaultBootModule="true">
+    <DatabaseDaemon Permissions="private" DataType="TextRecord" Foldername="db" Color="85,0,150" AdminEmailAccount="SuperCoolDude@nightmail.com" AdminEmailHostID="jmail" Name="GitLine">
+        <TextRecord>
+            <Title>Important</Title>
+            <Data>Download this to complete the mission!</Data>
+        </TextRecord>
+    </DatabaseDaemon>
+</Computer>

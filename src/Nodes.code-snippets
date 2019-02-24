@@ -1,0 +1,327 @@
+{
+	"BasicNode":{
+		"prefix":"<HacknetNode>",
+		"scope": "xml",
+		"body":
+		[
+			"<?xml version = \"1.0\" encoding = \"UTF-8\" ?>",
+			"<Computer id=\"${1:nodeID}\" name=\"${2:Bitwise Test PC}\" type=\"${3:4}\" icon=\"${4:laptop}\" security=\"${5:2}\" ip=\"${6:123.123.123.123}\" allowsDefaultBootModule=\"${7:true}\">",
+			"\t$0",
+			"</Computer"
+		],
+		"description": "REQUIRED FOR NODES - The basic layout of an empty node in Hacknet."
+	},
+	"Ports":{
+		"prefix":"<NodePorts>",
+		"scope": "xml",
+		"body":[
+			"<ports>${1:21,22,25,80,1433,6881,554}</ports>",
+			"<portsForCrack val=\"$0\"/"
+		],
+		"description": "The basic structure for ports in a Hacknet node."
+	},
+	"Firewall":{
+		"prefix": "<Firewall>",
+		"scope": "xml",
+		"body": "<firewall level=\"${1:7}\" solution=\"${2:hacknet}\" additionalTime=\"$0\"/",
+		"description": "Firewalls for node security in Hacknet."
+	},
+	"Proxy":{
+		"prefix": "<Proxy>",
+		"scope": "xml",
+		"body": "<proxy time=\"${0:1}\"/",
+		"description": "Proxy for node security in Hacknet."
+	},
+	"Account":{
+		"prefix": "<NodeAccount>",
+		"scope": "xml",
+		"body": "<account username=\"${1:bitwise}\" password=\"${2:passw0rd}\" type=\"${0:0}\"/",
+		"description": "Accounts for nodes within Hacknet."
+	},
+	"AdminPass":{
+		"prefix": "<AdminPass>",
+		"scope": "xml",
+		"body": "<adminPass pass=\"${0:honeypot}\"/",
+		"description": "Admin login for nodes. This will determine the password for the \"admin\" login."
+	},
+	"AdminType":{
+		"prefix": "<AdminType>",
+		"scope": "xml",
+		"body": "<admin type=\"${1:basic}\" isSuper=\"${2:false}\" resetPassword=\"${0:false}\"/",
+		"description": "The type of admin account on the node."
+	},
+	"TraceTimer":{
+		"prefix": "<NodeTrace>",
+		"scope": "xml",
+		"body": "<trace time=\"${0:100.0}\"/",
+		"description": "The trace timer for nodes."
+	},
+	"Tracker":{
+		"prefix": "<Tracker>",
+		"scope": "xml",
+		"body": "<tracker/>",
+		"description": "This will include a tracker in the node."
+	},
+	"PortRemapping":{
+		"prefix": "<PortRemap>",
+		"scope": "xml",
+		"body": "<portRemap>${1:21}=${2:265},${3:80}=${0:8080}</portRemap",
+		"description": "Allows you to remap ports. You can use as many as you'd like."
+	},
+	"Linking":{
+		"prefix": "<LinkNode>",
+		"scope": "xml",
+		"body": "<dlink target=\"${0:node2ID}\"/",
+		"description": "Links current node with another node, you can link as many as you'd like."
+	},
+	"PositionNear":{
+		"prefix": "<PositionNear>",
+		"scope": "xml",
+		"body": "<positionNear target=\"${1:closeNode}\" position=\"${2:1}\" total=\"${3:3}\" extraDistance=\"${4:0.5}\" force=\"${0:false}\"/",
+		"description": "This positions this computer near the target on the network map."
+	},
+	"TextFile":{
+		"prefix": "<TextFile>",
+		"scope": "xml",
+		"body": "<file path=\"${1:home}\" name=\"${2:readme.txt}\">${0:We're not in Kansas anymore, Toto.}</file",
+		"description": "Will create a basic text file for a node in Hacknet."
+	},
+	"ProgramFile":{
+		"prefix": "<ProgramFile>",
+		"scope": "xml",
+		"body": "<file path=\"${1:bin}\" name=\"${2:FTPSprint.exe}\">${0:#FTP_FAST_EXE#}</file",
+		"description": "Creates a template for a program file - FTPSprint used as the template."
+	},
+	"CustomThemeFile":{
+		"prefix": "<CustomThemeFile>",
+		"scope": "xml",
+		"body": "<customthemefile path=\"${1:sys}\" name=\"${2:Example-x-server.sys}\" themePath=\"Themes/${0:ExampleTheme.xml}\"/",
+		"description": "Creates a file for custom theme in a node."
+	},
+	"EncryptedFile":{
+		"prefix": "<EncryptedFile>",
+		"scope": "xml",
+		"body": "<encryptedFile path=\"${1:home}\" name=\"${2:spoilers.dec}\" extension=\"${3:.txt}\" ip=\"${4:123.123.123.123}\" header=\"${5:Packaged by Spoiler Inc.}\" ${6:pass=\"${7:secret}\"}>${0:Bit died in Hacknet!}</encryptedFile",
+		"description": "Makes an encrypted file with the option to remove the password."
+	},
+	"DeathRow":{
+		"prefix": "<DeathRowDaemon>",
+		"scope": "xml",
+		"body": "<deathRowDatabase /",
+		"description": "Death row database loads a pre-set collection of records."
+	},
+	"AcademicDaemon":{
+		"prefix": "<AcademicDaemon>",
+		"scope": "xml",
+		"body": "<academicDatabase /",
+		"description": "Academic Database. Grabs details from People files."
+	},
+	"ISP":{
+		"prefix": "<ISPDaemon>",
+		"scope": "xml",
+		"body": "<ispSystem /",
+		"description": "An ISP system, like the one used in the ETAS (Emergency Trace Aversion Sequence)."
+	},
+	"MedicalDaemon":{
+		"prefix": "<MedicalDatabase>",
+		"scope": "xml",
+		"body": "<MedicalDatabase /",
+		"description": "A medical database, like what Kellis uses. Grabs details from People files."
+	},
+	"UploadServer":{
+		"prefix": "<UploadDaemon>",
+		"scope": "xml",
+		"body": "<uploadServerDaemon name=\"${1:Upload Dropbox}\" folder=\"${2:Drop}\" needsAuth=\"${3:false}\" color=\"${0:204,116,212}\"/",
+		"description": "This is a special sort of server that allows you to upload files to it without admin permissions."
+	},
+	"WebServer":{
+		"prefix":"<WebServerDaemon>",
+		"scope": "xml",
+		"body": "<addWebServer name=\"${1:Website Server}\" url=\"Web/${2:ExampleWebsite}/${0:index.html}\"/",
+		"description": "Web servers are added like this - you can add your own web pages to the web presets folder and have them show up in-game too!"
+	},
+	"MessageBoard":{
+		"prefix": "<MessageBoardDaemon>",
+		"scope": "xml",
+		"body":
+		[
+			"<messageBoard name=\"${1:/el Sec}\">",
+			"\t<thread>${2:Docs}\/${3:Threads}\/${0:Thread1.txt}</thread>",
+			"</messageBoard"
+		],
+		"description": "/el style message board."
+	},
+	"MailServer":{
+		"prefix": "<MailServerDaemon>",
+		"scope": "xml",
+		"body":
+		[
+			"<account username=\"${1:mailPerson}\" password=\"${2:mailPass}\" type=\"2\"/>",
+			"<mailServer name=\"${3:NightMail}\" color=\"${4:0,51,102}\" generateJunk=\"${5:false}\">",
+			"\t<email recipient=\"${6:mailPerson}\" sender=\"${7:John Doe}\" subject=\"$8\">",
+			"\t\t$0",
+			"\t</email>",
+			"</mailServer"
+		],
+		"description": "Mail servers - you can use these to hold emails!"
+	},
+	"HeartMonitor":{
+		"prefix": "<HeartMonitorDaemon>",
+		"scope": "xml",
+		"body": "<HeartMonitor patient=\"${0:Jane_Doe}\"/",
+		"description": "A heart monitor, like the one used in Project Junebug."
+	},
+	"PointClicker":{
+		"prefix": "<PointClickerDaemon>",
+		"scope": "xml",
+		"body": "<PointCliker/",
+		"description": "Yep."
+	},
+	"SongChanger":{
+		"prefix": "<SongChangerDaemon>",
+		"scope": "xml",
+		"body": "<SongChangerDaemon /",
+		"description": "Allows the user to change to any non-DLC song from the base game."
+	},
+	"VariableMissionListing":{
+		"prefix": "<VariableMissionListingDaemon>",
+		"scope": "xml",
+		"body": "<variableMissionListingServer name=\"${1:Entropy}\" iconPath=\"${2:EntropyLogo.png}\" articleFolderPath=\"${3:Docs}\/${4:Entropy}\" color=\"${5:120,200,2}\" assigner=\"${6:false}\" public=\"${7:true}\" title=\"${0:Entropy Mission Listing}\"/",
+		"description": "Lists news articles and missions like on Entropy or SlashBot."
+	},
+	"MissionHubDaemon":{
+		"prefix": "<MissionHubServer>",
+		"scope": "xml",
+		"body": "<missionHubServer groupName=\"${1:CSEC}\" serviceName=\"${2:CSEC Mission Hub}\" missionFodlerpath=\"Missions/${3:CSEC}\" themeColor=\"${4:200,10,10}\" lineColor=\"${5:255,80,80}\" backgroundColor=\"${6:20,20,20}\" allowAbandon=\"${0:false}\"/",
+		"description": "Creates a CSEC-Style mission board"
+	},
+	"CreditsDaemon":{
+		"prefix": "<CreditsDaemon>",
+		"scope": "xml",
+		"body": 
+		[
+			"<file path=\"home\" name=\"CreditsData.txt\">%${1:Big Text}",
+			"^${2:Medium Text}",
+			"${3:Small Text}</file>",
+			"<CreditsDaemon Title=\"${4:Credits}\" ButtonText=\"${5:Disable Agent Tracking}\" ConditionalActionSetToRunOnButtonPressPath=\"Actions/${0:CreditsActions.xml}\"/"
+		],
+		"description": "Credits server, example credits file included."
+	},
+	"DelayHost":{
+		"prefix":"<DelayHost>",
+		"scope": "xml",
+		"body": "<FastActionHost /",
+		"description": "An optimized Action host daemon - this daemon does nothing except host delayable actions - but it is much more efficient at doing that than other servers. If you have lots of actions looping or in delay at once (more than 50, say) it might be worth moving them to be delay hosted on one of these if you encounter performance issues."
+	},
+	"IRC":{
+		"prefix": "<IRCDaemon>",
+		"scope": "xml",
+		"body":
+		[
+			"<IRCDaemon themeColor=\"${1:67,204,148}\" name=\"${2:Twilight Zone}\" needsAuth=\"${3:false}\">",
+			"\t<agent name=\"${4:SolidSky}\" color=\"${5:0,209,232}\"/>",
+			"\t<post user=\"${6:SolidSky}\">$0</post>",
+			"</IRCDaemon"
+		],
+		"description": "Creates an IRC daemon (without missions etc - just the chat)."
+	},
+	"CustomConnect":{
+		"prefix": "<CustomConnectDisplay>",
+		"scope": "xml",
+		"body": "<CustomConnectDisplayDaemon /",
+		"description": "Changes the default connect display to look like the one the \"ricer\" had in Labyrinths"
+	},
+	"WhitelistSource":{
+		"prefix": "<WhitelistDaemonSource>",
+		"scope": "xml",
+		"body": "<WhitelistAuthenticatorDaemon SelfAuthenticating=\"${0:false}\" /",
+		"description": "This is your basic whitelist server \"host\" type - it wont check incoming connection to itself against it's list. It only serves a protective function against *other* servers."
+	},
+	"WhitelistProtected":{
+		"prefix": "<WhitelistDaemonProtected>",
+		"scope": "xml",
+		"body": "<WhitelistAuthenticatorDaemon Remote=\"${0:WhitelistSourceID}\"/",
+		"description": "This one connects to a remote host and checks against that host's whitelist."
+	},
+	"IRCHub":{
+		"prefix": "<IRCHubDaemon>",
+		"scope": "xml",
+		"body":
+		[
+			"<DHSDaemon groupName=\"${1:Bit's Public IRC}\" addsFactionPointOnMissionComplete=\"${2:true}\" autoClearMissionsOnPlayerComplete=\"${3:true}\" themeColor=\"${4:255, 255, 161}\" allowContractAbbandon=\"${5:false}\">",
+			"\t<agent name=\"${6:Suns3t}\" pass=\"${7:sunrise}\" color=\"${0:209,74,48}\"/>",
+			"</DHSDaemon"
+		],
+		"description": "LABYRINTHS DLC ONLY - Creates a bibliotheque (DLC IRC server) style message board. Can be used to inject missions and messages into via the faction system."
+	},
+	"LogoDaemon":{
+		"prefix": "<LogoDaemon>",
+		"scope": "xml",
+		"body":
+		[
+			"<LogoDaemon Name=\"${1:Pacific Air}\" ShowsTitle=\"${2:true}\" TextColor=\"${3:0, 220, 220, 200}\" LogoImagePath=\"${4:PacificAir.png}\">${5:Line One}",
+			"${6:Line Two}",
+			"${0:Line Three}</LogoDaemon"
+		],
+		"description": "LABYRINTHS DLC ONLY - Displays a big logo on the front of the server with optional messages underneath. If you do not provide a logo image path, it'll display a fancy loading spinner instead."
+	},
+	"CustomConnectLogo":{
+		"prefix": "<CustomConnectLogo>",
+		"scope": "xml",
+		"body": "<LogoCustomConnectDisplayDaemon logo=\"${1:PacificAir.png}\" title=\"${1:PacificAir.png}\" overdrawLogo=\"${2:true}\" buttonAlignment=\"${0:left}\"/",
+		"description": "LABYRINTHS DLC ONLY - Custom connect display with a nameplate logo and title image like PacificAir had in Labyrinths."
+	},
+	"DatabaseDaemon":{
+		"prefix": "<DatabaseDaemon>",
+		"scope": "xml",
+		"body":[
+			"<DatabaseDaemon Permissions=\"${1:private}\" DataType=\"${2:TextRecord}\" Foldername=\"${3:database}\" Color=\"${4:85,0,150}\" AdminEmailAccount=\"${5:DBAdmin@jmail.com}\" AdminEmailHostID=\"${6:jmail}\" Name=\"${7:Important Database}\">",
+			"\t<TextRecord>",
+			"\t\t<Title>$8</Title>",
+			"\t\t<Data>$0</Data>",
+			"\t</TextRecord>",
+			"</DatabaseDaemon"
+		],
+		"description": "LABYRINTHS DLC ONLY - Database daemons display a list of records of any datatype in Hacknet. Providing no datatype will give the \"API Access\" screen like Pacific air had."
+	},
+	"MemoryDump":{
+		"prefix": "<MemoryDump>",
+		"scope": "xml",
+		"body":
+		[
+			"<Memory>",
+			"\t<Commands>",
+			"\t\t<Command>$1</Command>",
+			"\t</Commands>",
+			"\t<Data>",
+			"\t\t<Block>$2</Block>",
+			"\t</Data>",
+			"\t<Images>",
+			"\t\t<Image>${0:Images/EasterEgg.png</Image>",
+			"\t</Images>",
+			"</Memory"
+		],
+		"description": "LABYRINTHS DLC ONLY - This is the memory that will be turned into a memory dump using MemDumpGenerator.exe"
+	},
+	"MemoryDumpFile":{
+		"prefix": "<MemoryDumpFile>",
+		"scope": "xml",
+		"body":
+		[
+			"<memoryDumpFile name=\"$1.md\" path=\"${2:home}\">",
+			"\t<Memory>",
+			"\t\t<Commands>",
+			"\t\t\t<Command>$3</Command>",
+			"\t\t</Commands>",
+			"\t\t<Data>",
+			"\t\t\t<Block>$4</Block>",
+			"\t\t</Data>",
+			"\t\t<Images>",
+			"\t\t\t<Image>${0:Images/EasterEgg.png</Image>",
+			"\t\t</Images>",
+			"\t</Memory>",
+			"</memoryDumpFile"
+		],
+		"description": "LABYRINTHS DLC ONLY - Memory dump file - this can be downloaded and analyzed with MemForensics.exe"
+	}
+}

@@ -1,0 +1,41 @@
+<!-- Action -->
+<ConditionalActions>
+    <Instantly>
+        <StartScreenBleedEffect AlertTitle="Sequencer Attack" CompleteAction="Actions/SequencerFailed.xml" TotalDurationSeconds="135.0" DelayHost="delay" Delay="11.5">Break into node
+        Delete stuff
+        Get out</StartScreenBleedEffect>
+        <RunFunction FunctionName="playCustomSongImmediately:Music/RollerMobster.ogg"/>
+        <SwitchToThem ThemePathOrName="Themes/SequencerTheme.xml" FlickerInDuration="2.0" DelayHost="delay" Delay="12.0"/>
+    </Instantly>
+    
+    <HasFlags requiredFlags="seqComplete">
+        <CancelScreenBleedEffect DelayHost="delay" Delay="0.0"/>
+        <KillExe DelayHost="delay" Delay="0.0" ExeName="*"/>
+    </HasFlags>
+</ConditionalActions>
+
+<!-- Mission -->
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<mission id="finaleMission" activeCheck="true">
+    <goals>
+        <goal type="clearfolder" target="finaleNode" path="home"/>
+        <goal type="clearfolder" target="finaleNode" path="sys"/>
+    </goals>
+
+    <missionEnd>addFlags:seqComplete</missionEnd>
+
+    <nextMission IsSilent="false">Missions/ExtensionEnd.xml</nextMission>
+
+    <posting title="Very Important Mission">CRITICAL might I add</posting>
+
+    <email>
+        <sender>Moonshine</sender>
+        <subject>Breakthrough</subject>
+        <body>Blah blah blah, you know what to do</body>
+        <attachments>
+            <note title="Objective">Clear the home and sys folders. Grab the sequencer from the asset server.</note>
+            <link comp="assetServer"/>
+            <account comp="assetServer" user="admin" pass="shining"/>
+        </attachments>
+    </email>
+</mission>

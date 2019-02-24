@@ -1,0 +1,43 @@
+{
+	"People":{
+		"prefix": "<HacknetPeopleFile>",
+		"scope": "xml",
+		"body":
+		[
+			"<?xml version = \"1.0\" encoding = \"UTF-8\" ?>",
+			"<Person id=\"${1:JohnDoe}\" handle=\"${2:J0hnD0eGaming}\" firstName=\"${3:John}\" lastName=\"${4:Doe}\" isMale=\"${5:true}\" forceHasNeopals=\"${6:false}\">",
+			"\t<Birthplace name=\"${7:West Virginia}\">",
+			"\t<Notes>${8:These will not show up in game. Take me home, country roads.}</Notes>",
+			"\t$0",
+			"</Person"
+		],
+		"description": "The bare-bones layout of a basic person."
+	},
+	"Academics":{
+		"prefix": "<PeopleAcadameics>",
+		"scope": "xml",
+		"body":
+		[
+			"<Degrees>",
+			"\t<Degree uni=\"${1:University of Hacknet}\" gpa=\"${2:3.5}\">${3:Bachelor of PortHack}</Degree>",
+			"\t<Degree uni=\"${4:University of Hacknet}\" gpa=\"${5:3.3}\">${0:Bachelor of Sequencer}</Degree>",
+			"</Degrees"
+		],
+		"description": "The layout of academics for a people file. You should run <HacknetPeopleFile> first."
+	},
+	"Medical":{
+		"prefix": "<PeopleMedical>",
+		"scope": "xml",
+		"body":
+		[
+			"<Medical>",
+			"\t<Blood>${1:AA}</Blood>",
+			"\t<Height>${2:178}</Height>",
+			"\t<Allergies>${3:Grass,Peanuts}</Allergies>",
+			"\t<Perscription>${4:You can have multiple of these.}</Perscription>",
+			"\t<Notes>${5:These show up in medical records.}</Notes>",
+			"</Medical>",
+			"<DOB>${0:17/02/1990 09:00:00}</DOB"
+		]
+	}
+}

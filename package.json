@@ -1,0 +1,53 @@
+{
+  "name": "hacknet-vscode",
+  "version": "1.0.0",
+  "description": "Hacknet Extension development, made easy in Visual Studio Code.",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SmartieCodes/hacknet-vscode.git"
+  },
+  "categories": ["Snippets"],
+  "author": "SmartieCodes",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/SmartieCodes/hacknet-vscode/issues"
+  },
+  "engines": {
+    "vscode": "^1.31.1"
+  },
+  "publisher": "Smartie",
+  "displayName": "Hacknet For Visual Studio Code",
+  "icon": "Logo.png",
+  "homepage": "https://github.com/SmartieCodes/hacknet-vscode#readme",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "xml",
+        "path": "./src/Actions.code-snippets"
+      },
+      {
+        "language": "xml",
+        "path": "./src/Factions.code-snippets"
+      },
+      {
+        "language": "plaintext",
+        "path": "./src/HackerScripts.code-snippets"
+      },
+      {
+        "language": "xml",
+        "path": "./src/Missions.code-snippets"
+      },
+      {
+        "language": "xml",
+        "path": "./src/Nodes.code-snippets"
+      },
+      {
+        "language": "xml",
+        "path": "./src/People.code-snippets"
+      }
+    ]
+  }
+}

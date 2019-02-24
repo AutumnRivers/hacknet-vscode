@@ -1,0 +1,26 @@
+{
+	"HacknetFaction":{
+		"prefix": "<HacknetFaction>",
+		"scope": "xml",
+		"body":
+		[
+			"<CustomFaction name=\"${1:Example Faction}\" id=\"${2:introFac}\" playerVal=\"${3:0}\">",
+			"\t",
+			"\t$0",
+			"\t",
+			"</CustomFaction"
+		],
+		"description": "Your faction file should start with this."
+	},
+	"FactionAction":{
+		"prefix": "<FactionAction>",
+		"scope": "xml",
+		"body":
+		[
+			"<Action ValueRequired=\"${1:1}\" Flags=\"$2\">",
+			"\t$0",
+			"</Action"
+		],
+		"description": "An action(s) to run when the requirements are met. Used like conditional actions."
+	}
+}

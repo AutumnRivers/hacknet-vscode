@@ -1,0 +1,81 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="bitpc" name="Bitwise Test PC" type="1" icon="chip" security="0" ip="123.123.123.123" allowsDefaultBootModule="true">
+    
+    <!-- Security -->
+    <ports>22,80,443</ports>
+    <portsForCrack val="2"/>
+    <firewall level="6" solution="cookie" additionalTime="0.0"/>
+    <proxy time="1"/>
+
+    <account username="mett" password="hackent" type="1"/>
+    <adminPass pass="cheese"/>
+
+    <!-- Files -->
+    <file path="home" name="readme.txt">You read me! Great job!</file>
+    <file path="bin" name="SSHCrack.exe">#SSH_CRACK_EXE#</file>
+    <customthemefile path="sys" name="Cool-x-server.sys" themePath="Themes/CoolTheme.xml"/>
+    <encryptedFile path="home" name="spoilers.dec" extension=".txt" ip="47.222.33.193" header="Packaged by Spoiler Inc." pass="pumpkinpie">LunarOS is a great extension.</encryptedFile>
+
+    <!-- Daemons -->
+    <deathRowDatabase />
+    <academicDatabase />
+    <ispSystem />
+    <MedicalDatabase />
+    <uploadServerDaemon name="Secure Dropbox" folder="Upload" needsAuth="true" color="204,116,212"/>
+    <addWebServer name="Cool Website" url="Web/CoolWebsite/index.html"/>
+
+    <messageBoard name="5chan">
+        <thread>Docs/5chan/IntroThread.txt</thread>
+    </messageBoard>
+
+    <account username="Smartie" password="pizza" type="2"/>
+    <mailServer name="Eclipse" color="0,51,102" generateJunk="true">
+        <email recipient="Smartie" sender="???" subject="Tips On Using VSCode">
+            Yo can I get some tips on how to use VSCode?
+        </email>
+    </mailServer>
+
+    <HeartMonitor patient="H_Peters"/>
+    <PointCliker/>
+    <SongChangerDaemon />
+
+    <variableMissionListingServer name="TwilightZone" iconPath="twLogo.png" articleFolderPath="Missions/TwilightZone" color="120,200,2" assigner="true" public="false" title="Twilight Zone Mission Hub"/>
+
+    <missionHubServer groupName="Moonshine" serviceName="Moonshine Security" missionFodlerpath="Missions/MoonshineSecurity" themeColor="200,10,10" lineColor="255,80,80" backgroundColor="20,20,20" allowAbandon="false"/>
+
+    <file path="home" name="CreditsData.txt">%Extension
+    ^Made by You!
+    Special thanks to the academy</file>
+    <CreditsDaemon Title="The End" ButtonText="End" ConditionalActionSetToRunOnButtonPressPath="Actions/EndExtension.xml"/>
+
+    <FastActionHost />
+
+    <IRCDaemon themeColor="67,204,148" name="Eclipse IRC" needsAuth="true">
+        <agent name="SunBeam" color="0,209,232"/>
+        <post user="SunBeam">Blah blah blah</post>
+    </IRCDaemon>
+
+    <CustomConnectDisplayDaemon />
+
+    <WhitelistAuthenticatorDaemon SelfAuthenticating="false" />
+    <WhitelistAuthenticatorDaemon Remote="WhitelistSourceID"/>
+
+    <!-- Labs Only Daemons -->
+    <DHSDaemon groupName="Bit's Public IRC" addsFactionPointOnMissionComplete="true" autoClearMissionsOnPlayerComplete="true" themeColor="255, 255, 161" allowContractAbbandon="false">
+        <agent name="Suns3t" pass="sunrise" color="209,74,48"/>
+    </DHSDaemon>
+
+    <LogoDaemon Name="Pacific Air" ShowsTitle="true" TextColor="0, 220, 220, 200" LogoImagePath="PacificAir.png">Line One
+    Line Two
+    Line Three</LogoDaemon>
+
+    <LogoCustomConnectDisplayDaemon logo="EncSolutions.png" title="EncSolutions.png" overdrawLogo="true" buttonAlignment="center"/>
+
+    <DatabaseDaemon Permissions="private" DataType="TextRecord" Foldername="database" Color="85,0,150" AdminEmailAccount="DBAdmin@jmail.com" AdminEmailHostID="jmail" Name="Important Database">
+        <TextRecord>
+            <Title>Title Of File</Title>
+            <Data>Contents</Data>
+        </TextRecord>
+    </DatabaseDaemon>
+
+</Computer>

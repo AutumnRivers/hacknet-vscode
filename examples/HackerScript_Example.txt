@@ -1,0 +1,10 @@
+config playerComp evilNode 1.0 $#%#$
+
+connect $#%#$
+stopMusic $#%#$
+writel This is a working script! $#%#$
+openCDTray $#%#$
+writel Yep! $#%#$
+closeCDTray $#%#$
+startMusic $#%#$
+disconnect $#%#$

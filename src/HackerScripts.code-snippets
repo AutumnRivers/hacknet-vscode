@@ -1,0 +1,154 @@
+{
+	"ScriptConfig":{
+		"prefix": "HackerScript",
+		"scope": "plaintext",
+		"body":
+		[
+			"config ${1:playerComp} ${2:enemyComp} ${3:0.5} $#%#$",
+			"",
+			"$0"
+		],
+		"description": "The basic starting point for HackerScripts."
+	},
+	"Connect":{
+		"prefix": "Connect",
+		"scope": "plaintext",
+		"body":
+		[
+			"connect $#%#$",
+			"$0",
+			"disconnect $#%#$"
+		],
+		"description": "Connect will show a flashy warning screen if the player is the target. A log is left of the connection and disconnection regardless of target."
+	},
+	"WriteLine":{
+		"prefix": "WriteLine",
+		"scope": "plaintext",
+		"body": "writel $0 $#%#$",
+		"description": "This will write a line to the terminal if the player is the target."
+	},
+	"WriteLineSilent":{
+		"prefix": "WriteLineSilent",
+		"scope": "plaintext",
+		"body": "writel_silent $0 $#%#$",
+		"description": "This will write a line to the terminal if the player is the target. Also does it without flashing the UI and silencing the beep."
+	},
+	"Write":{
+		"prefix": "Write",
+		"scope": "plaintext",
+		"body": "write $0 $#%#$",
+		"description": "This will write a string to the terminal if the player is the target."
+	},
+	"WriteSilent":{
+		"prefix": "WriteSilent",
+		"scope": "plaintext",
+		"body": "write_silent $0 $#%#$",
+		"description": "This will write a string to the terminal if the player is the target. Also does it without flashing the UI and silencing the beep."
+	},
+	"Delay":{
+		"prefix": "Delay",
+		"scope": "plaintext",
+		"body": "delay ${0:2} $#%#$",
+		"description": "Waits to continue until the specified time is up."
+	},
+	"OpenPort":{
+		"prefix": "OpenPort",
+		"scope": "plaintext",
+		"body": "openPort ${0:21} $#%#$",
+		"description": "Opens a port on the target and leaves a log."
+	},
+	"Music":{
+		"prefix": "MusicToggle",
+		"scope": "plaintext",
+		"body":
+		[
+			"stopMusic $#%#$",
+			"$0",
+			"startMusic $#%#$"
+		],
+		"description": "Toggles music on and off. stopMusic stops the music with a stinger."
+	},
+	"ClearTerminal":{
+		"prefix": "ClearTerminal",
+		"scope": "plaintext",
+		"body": "clearTerminal $#%#$",
+		"description": "Clear the terminal of the player, if they are the target."
+	},
+	"HideUI":{
+		"prefix": "HideUI",
+		"scope": "plaintext",
+		"body":
+		[
+			"hideNetMap $#%#$",
+			"hideRam $#%#$",
+			"hideDisplay $#%#$",
+			"hideTerminal $#%#$"
+		],
+		"description": "These commands hide stuff if the player is connected to them. BE VERY CAREFUL WITH THIS - player cant get it back alone."
+	},
+	"ShowUI":{
+		"prefix": "ShowUI",
+		"scope": "plaintext",
+		"body":
+		[
+			"showNetMap $#%#$",
+			"showRam $#%#$",
+			"showDisplay $#%#$",
+			"showTerminal $#%#$"
+		],
+		"description": "These commands bring the windows back."
+	},
+	"TrackSeq":{
+		"prefix": "TrackSeq",
+		"scope": "plaintext",
+		"body": "trackseq $#%#$",
+		"description": "This flags it so that the player will have to do the ETAS if they fail the next forkbomb that they receive, if they have the CSEC flag"
+	},
+	"InstantTrace":{
+		"prefix": "InstantTrace",
+		"scope": "plaintext",
+		"body": "instanttrace $#%#$",
+		"description": "This is a brutal command that instantly starts the ETAS for the player if they have the CSEC flag."
+	},
+	"FlashUI":{
+		"prefix": "Flash",
+		"scope": "plaintext",
+		"body": "flash $#%#$",
+		"description": "This will flash the UI if the player is the target."
+	},
+	"ForkBomb":{
+		"prefix": "ForkBomb",
+		"scope": "plaintext",
+		"body": "forkbomb $#%#$",
+		"description": "Launches a forkbomb on the target. Crashing it instantly if non-player."
+	},
+	"DeleteFile":{
+		"prefix": "DeleteFile",
+		"scope": "plaintext",
+		"body": "delete /${1:sys} ${0:x-server.sys} $#%#$",
+		"description": "Deletes a file. You can specify any folder and file here, or * for all files in that folder."
+	},
+	"SetAdminPass":{
+		"prefix": "SetAdminPass",
+		"scope": "plaintext",
+		"body": "setAdminPass $0 $#%#$",
+		"description": "Sets the admin password of this computer to be whatever you set it to."
+	},
+	"MakeFile":{
+		"prefix": "MakeFile",
+		"scope": "plaintext",
+		"body": "makeFile ${1:home} ${2:file.txt} $0 $#%#$",
+		"description": "Makes a new file in the folder named in the first argument (cant do subfolders, sorry) with the name and content you set it to."
+	},
+	"CDTray":{
+		"prefix": "CDTray",
+		"scope": "plaintext",
+		"body":
+		[
+			"openCDTray $#%#$",
+			"$0",
+			"closeCDTray $#%#$"
+		],
+		"description": "YEP!"
+	}
+}
