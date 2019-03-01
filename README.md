@@ -11,6 +11,7 @@ Table Of Contents
 * [About](#about)
 * [How To Use](#how-to-use)
     * [Templates](#predefined-templates)
+    * [Support](#support)
 * [Examples](#examples)
 * [Installation](#installing)
 * [Building](#building-from-source)
@@ -36,6 +37,9 @@ If an entire tag/attribute is highlighted, then that means you can safely delete
 5. SequencerMission
 
 Anything not listed here is likely not large enough to be considered a "template". Anything in the [official guide](https://steamcommunity.com/sharedfiles/filedetails/?id=914587661) is supported by this extension, along with some extras not included in the guide!
+
+## Support
+If you're still not getting the hang of this, that's okay! Join the [official Hacknet Discord](https://discord.gg/hacknet) and I'll do my best to help. It'll be hard to miss me.
 
 # Examples
 ## Sequencer Example

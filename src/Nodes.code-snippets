@@ -284,6 +284,12 @@
 		],
 		"description": "LABYRINTHS DLC ONLY - Database daemons display a list of records of any datatype in Hacknet. Providing no datatype will give the \"API Access\" screen like Pacific air had."
 	},
+	"AircraftDaemon":{
+		"prefix": "<AircraftDaemon>",
+		"scope": "xml",
+		"body":"<AircraftDaemon Name=\"${1:Pacific Air Flight PA935}\" OriginX=\"${2:0.2155}\" OriginY=\"${3:0.5602}\" DestX=\"${4:0.7672}\" DestY=\"${0:0.6264}\" />",
+		"description": "LABYRINTHS DLC ONLY - Creates an aircraft that works like the ones used in the finale of Labs. NOTE: This is not officially supported by the guide, so you may not receive support for this."
+	},
 	"MemoryDump":{
 		"prefix": "<MemoryDump>",
 		"scope": "xml",
@@ -297,7 +303,7 @@
 			"\t\t<Block>$2</Block>",
 			"\t</Data>",
 			"\t<Images>",
-			"\t\t<Image>${0:Images/EasterEgg.png</Image>",
+			"\t\t<Image>${0:Images/EasterEgg.png}</Image>",
 			"\t</Images>",
 			"</Memory"
 		],
@@ -317,7 +323,7 @@
 			"\t\t\t<Block>$4</Block>",
 			"\t\t</Data>",
 			"\t\t<Images>",
-			"\t\t\t<Image>${0:Images/EasterEgg.png</Image>",
+			"\t\t\t<Image>${0:Images/EasterEgg.png}</Image>",
 			"\t\t</Images>",
 			"\t</Memory>",
 			"</memoryDumpFile"
