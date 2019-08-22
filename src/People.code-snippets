@@ -9,7 +9,7 @@
 			"\t<Birthplace name=\"${7:West Virginia}\">",
 			"\t<Notes>${8:These will not show up in game. Take me home, country roads.}</Notes>",
 			"\t$0",
-			"</Person"
+			"</Person>"
 		],
 		"description": "The bare-bones layout of a basic person."
 	},
@@ -21,7 +21,7 @@
 			"<Degrees>",
 			"\t<Degree uni=\"${1:University of Hacknet}\" gpa=\"${2:3.5}\">${3:Bachelor of PortHack}</Degree>",
 			"\t<Degree uni=\"${4:University of Hacknet}\" gpa=\"${5:3.3}\">${0:Bachelor of Sequencer}</Degree>",
-			"</Degrees"
+			"</Degrees>"
 		],
 		"description": "The layout of academics for a people file. You should run <HacknetPeopleFile> first."
 	},
@@ -37,7 +37,7 @@
 			"\t<Perscription>${4:You can have multiple of these.}</Perscription>",
 			"\t<Notes>${5:These show up in medical records.}</Notes>",
 			"</Medical>",
-			"<DOB>${0:17/02/1990 09:00:00}</DOB"
+			"<DOB>${0:17/02/1990 09:00:00}</DOB>"
 		]
 	}
 }

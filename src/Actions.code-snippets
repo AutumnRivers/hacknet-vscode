@@ -6,7 +6,7 @@
 		[
 			"<ConditionalActions>",
 			"\t$0",
-			"</ConditionalActions"
+			"</ConditionalActions>"
 		],
 		"description": "REQUIRED FOR ACTIONS - The starting tag of any action file."
 	},
@@ -17,7 +17,7 @@
 		[
 			"<Instantly needsMissionComplete=\"${1:false}\">",
 			"\t$0",
-			"</Instantly"
+			"</Instantly>"
 		],
 		"description": "Instantly run a set of actions."
 	},
@@ -28,7 +28,7 @@
 		[
 			"<OnConnect target=\"$1\">",
 			"\t$0",
-			"</OnConnect"
+			"</OnConnect>"
 		],
 		"description": "Run a set of actions when the player connects to the target node."
 	},
@@ -39,7 +39,7 @@
 		[
 			"<OnDisconnect target=\"$1\">",
 			"\t$0",
-			"</OnDisconnect"
+			"</OnDisconnect>"
 		],
 		"description": "Run a set of actions when the player disconnects to the target node."
 	},
@@ -50,109 +50,109 @@
 		[
 			"<HasFlags requiredFlags=\"$1\">",
 			"\t$0",
-			"</HasFlags"
+			"</HasFlags>"
 		]
 	},
 	"RunFunction":{
 		"prefix":"<RunFunction>",
 		"scope": "xml",
-		"body": "<RunFunction FunctionName=\"$1\" FunctionValue=\"${0:0}\"/",
+		"body": "<RunFunction FunctionName=\"$1\" FunctionValue=\"${0:0}\"/>",
 		"description": "Run a mission function."
 	},
 	"LoadMission":{
 		"prefix": "<LoadMission>",
 		"scope": "xml",
-		"body": "<LoadMission MissionName=\"Missions/${0:SurpriseMission.xml}\"/",
+		"body": "<LoadMission MissionName=\"Missions/${0:SurpriseMission.xml}\"/>",
 		"description": "Load a mission and send its email."
 	},
 	"AddAsset":{
 		"prefix": "<AddAsset>",
 		"scope": "xml",
-		"body": "<AddAsset FileName=\"$1\" FileContents=\"$2\" TargetComp=\"${3:playerComp}\" TargetFolderpath=\"${0:home}\"/",
+		"body": "<AddAsset FileName=\"$1\" FileContents=\"$2\" TargetComp=\"${3:playerComp}\" TargetFolderpath=\"${0:home}\"/>",
 		"description": "Remotely add an asset to the target node."
 	},
 	"CopyAsset":{
 		"prefix": "<CopyAsset>",
 		"scope": "xml",
-		"body": "<CopyAsset DestFilePath=\"${1:home}\" DestComp=\"${2:playerComp}\" SourceComp=\"${3:assetNode}\" SourceFileName=\"${4:copycat.txt}\" SourceFilePath=\"${0:home/copy}\"/",
+		"body": "<CopyAsset DestFilePath=\"${1:home}\" DestComp=\"${2:playerComp}\" SourceComp=\"${3:assetNode}\" SourceFileName=\"${4:copycat.txt}\" SourceFilePath=\"${0:home/copy}\"/>",
 		"description": "Copy a file from a remote node."
 	},
 	"AddMissionToHubServer":{
 		"prefix": "<AddMissionToHubServer>",
 		"scope": "xml",
-		"body": "<AddMissionToHubServer MissionFilepath=\"Missions/${1:HubMission.xml}\" TargetComp=\"${2:missionHub}\" AssignmentTag=\"${0:Kaguya}\"/",
+		"body": "<AddMissionToHubServer MissionFilepath=\"Missions/${1:HubMission.xml}\" TargetComp=\"${2:missionHub}\" AssignmentTag=\"${0:Kaguya}\"/>",
 		"description": "Add a mission file to a mission hub."
 	},
 	"RemoveMissionFromHubServer":{
 		"prefix": "<RemoveMissionFromHubServer>",
 		"scope": "xml",
-		"body": "<RemoveMissionFromHubServer MissionFilepath=\"Missions/${1:HubMission.xml}\" TargetComp=\"${0:missionHub}\"/",
+		"body": "<RemoveMissionFromHubServer MissionFilepath=\"Missions/${1:HubMission.xml}\" TargetComp=\"${0:missionHub}\"/>",
 		"description": "Remove a mission file from a mission hub."
 	},
 	"AddThreadToMissionBoard":{
 		"prefix": "<AddThreadToMissionBoard>",
 		"scope": "xml",
-		"body": "<AddThreadToMissionBoard ThreadFilepath=\"${1:Docs/Thread.txt}\" TargetComp=\"${0:elSec}\"/",
+		"body": "<AddThreadToMissionBoard ThreadFilepath=\"${1:Docs/Thread.txt}\" TargetComp=\"${0:elSec}\"/>",
 		"description": "Add a thread to an /el Sec-like board."
 	},
 	"AddIRCMessage":{
 		"prefix": "<AddIRCMessage>",
 		"scope": "xml",
-		"body": "<AddIRCMessage Author=\"${1:Kaguya}\" TargetComp=\"${2:ircNode}\" Delay=\"$3\">$0</AddIRCMessage",
+		"body": "<AddIRCMessage Author=\"${1:Kaguya}\" TargetComp=\"${2:ircNode}\" Delay=\"$3\">$0</AddIRCMessage>",
 		"description": "Add a generic IRC message."
 	},
 	"AddIRCMessage_WithNote":{
 		"prefix": "<AddIRCNote>",
 		"scope": "xml",
-		"body": "<AddIRCMessage Author=\"${1:Kaguya}\" TargetComp=\"${2:ircNode}\" Delay=\"$3\">!ATTACHMENT:note#%#${4:Note Title}#%#$0</AddIRCMessage",
+		"body": "<AddIRCMessage Author=\"${1:Kaguya}\" TargetComp=\"${2:ircNode}\" Delay=\"$3\">!ATTACHMENT:note#%#${4:Note Title}#%#$0</AddIRCMessage>",
 		"description": "Add a note to an IRC."
 	},
 	"AddIRCMessage_WithNode":{
 		"prefix": "<AddIRCNode>",
 		"scope": "xml",
-		"body": "<AddIRCMessage Author=\"${1:Kaguya}\" TargetComp=\"${2:ircNode}\" Delay=\"$3\">!ATTACHMENT:link#%#${4:enemyNode}#%#${0:123.123.123.123}</AddIRCMessage",
+		"body": "<AddIRCMessage Author=\"${1:Kaguya}\" TargetComp=\"${2:ircNode}\" Delay=\"$3\">!ATTACHMENT:link#%#${4:enemyNode}#%#${0:123.123.123.123}</AddIRCMessage>",
 		"description": "Add a node to an IRC."
 	},
 	"AddIRCMessage_WithAccount":{
 		"prefix": "<AddIRCAccount>",
 		"scope": "xml",
-		"body": "<AddIRCMessage Author=\"${1:Kaguya}\" TargetComp=\"${2:ircNode}\" Delay=\"$3\">!ATTACHMENT:account#%#${4:enemyNode}#%#${5:123.123.123.123}#%#${6:username}#%#${0:password}</AddIRCMessage",
+		"body": "<AddIRCMessage Author=\"${1:Kaguya}\" TargetComp=\"${2:ircNode}\" Delay=\"$3\">!ATTACHMENT:account#%#${4:enemyNode}#%#${5:123.123.123.123}#%#${6:username}#%#${0:password}</AddIRCMessage>",
 		"description": "Add account details to an IRC."
 	},
 	"CrashComputer":{
 		"prefix":"<CrashComputer>",
 		"scope": "xml",
-		"body": "<CrashComputer TargetComp=\"${1:playerComp}\" CrashSource=\"${2:enemyNode}\" DelayHost=\"${3:delayNode}\" Delay=\"$0\"/",
+		"body": "<CrashComputer TargetComp=\"${1:playerComp}\" CrashSource=\"${2:enemyNode}\" DelayHost=\"${3:delayNode}\" Delay=\"$0\"/>",
 		"description": "Crash a node."
 	},
 	"DeleteFile":{
 		"prefix": "<DeleteFile>",
 		"scope": "xml",
-		"body": "<DeleteFile TargetComp=\"${1:playerComp}\" FilePath=\"${2:home}\" FileName=\"${3:deleteme.txt}\" DelayHost=\"${4:delayNode}\" Delay=\"$0\"/",
+		"body": "<DeleteFile TargetComp=\"${1:playerComp}\" FilePath=\"${2:home}\" FileName=\"${3:deleteme.txt}\" DelayHost=\"${4:delayNode}\" Delay=\"$0\"/>",
 		"description": "Delete a file."
 	},
 	"AddConditionalActions":{
 		"prefix": "<AddConditionalActions>",
 		"scope": "xml",
-		"body": "<AddConditionalActions Filepath=\"Actions/${1:NextAction.xml}\" DelayHost=\"${2:delayNode}\" Delay=\"$0\"/",
+		"body": "<AddConditionalActions FilePath=\"Actions/${1:NextAction.xml}\" DelayHost=\"${2:delayNode}\" Delay=\"$0\"/>",
 		"description": "Load in a new action file."
 	},
 	"SaveGame":{
 		"prefix": "<SaveGame>",
 		"scope": "xml",
-		"body": "<SaveGame DelayHost=\"${1:delayNode}\" Delay=\"$0\"/",
+		"body": "<SaveGame DelayHost=\"${1:delayNode}\" Delay=\"$0\"/>",
 		"description": "Save the game."
 	},
 	"LaunchHackScript":{
 		"prefix": "<LaunchHackScript>",
 		"scope": "xml",
-		"body": "<LaunchHackScript Filepath=\"${1:Scripts}/${2:HackerScript.txt}\" DelayHost=\"${3:delayNode}\" Delay=\"$4\" SourceComp=\"${5:enemyNode}\" TargetComp=\"${6:playerComp}\" RequireLogsOnSource=\"${7:false}\" RequireSourceIntact=\"${0:true}\"/",
+		"body": "<LaunchHackScript FilePath=\"${1:Scripts}/${2:HackerScript.txt}\" DelayHost=\"${3:delayNode}\" Delay=\"$4\" SourceComp=\"${5:enemyNode}\" TargetComp=\"${6:playerComp}\" RequireLogsOnSource=\"${7:false}\" RequireSourceIntact=\"${0:true}\"/>",
 		"description": "Launch a hacker script. Oo, spooky!"
 	},
 	"SwitchToTheme":{
 		"prefix": "<SwitchToTheme>",
 		"scope": "xml",
-		"body": "<SwitchToTheme ThemePathOrName=\"Themes/${1:ExampleTheme.xml}\" FlickerInDuration=\"${2:3.0}\" DelayHost=\"${3:delayNode}\" Delay=\"$0\"/",
+		"body": "<SwitchToTheme ThemePathOrName=\"Themes/${1:ExampleTheme.xml}\" FlickerInDuration=\"${2:3.0}\" DelayHost=\"${3:delayNode}\" Delay=\"$0\"/>",
 		"description": "Flicker the player into a new theme."
 	},
 	"ScreenBleed":{
@@ -162,74 +162,74 @@
 		[
 			"<StartScreenBleedEffect AlertTitle=\"${1:Sequencer Attack}\" CompleteAction=\"Actions/${2:ScreenBleedFailed.xml}\" TotalDurationSeconds=\"$3\" DelayHost=\"${4:delayNode}\" Delay=\"$5\">${6:Break into the Moonshine servers}",
 			"${7:Delete all files and backups}",
-			"${0:Get out of there!}</StartScreenBleedEffect"
+			"${0:Get out of there!}</StartScreenBleedEffect>"
 		],
 		"description": "Start a screen bleed effect, mostly used in sequencers."
 	},
 	"StopScreenBleed":{
 		"prefix": "<CancelScreenBleed>",
 		"scope": "xml",
-		"body": "<CancelScreenBleedEffect DelayHost=\"${1:delayNode}\" Delay=\"$0\"/",
+		"body": "<CancelScreenBleedEffect DelayHost=\"${1:delayNode}\" Delay=\"$0\"/>",
 		"description": "Stop a screen bleed effect."
 	},
 	"AppendFile":{
 		"prefix": "<AppendToFile>",
 		"scope": "xml",
-		"body": "<AppendToFile DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${3:companyWhitelist}\" TargetFolderpath=\"${4:Whitelist}\" TargetFilename=\"${5:list.txt}\">${0:#PLAYER_IP#}</AppendToFile",
+		"body": "<AppendToFile DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${3:companyWhitelist}\" TargetFolderpath=\"${4:Whitelist}\" TargetFilename=\"${5:list.txt}\">${0:#PLAYER_IP#}</AppendToFile>",
 		"description": "Append text to a file."
 	},
 	"KillExe":{
 		"prefix": "<KillExe>",
 		"scope": "xml",
-		"body": "<KillExe DelayHost=\"${1:delayNode}\" Delay=\"$2\" ExeName=\"${0:*}\"/",
+		"body": "<KillExe DelayHost=\"${1:delayNode}\" Delay=\"$2\" ExeName=\"${0:*}\"/>",
 		"description": "Kill any currently running exe with the title. Use * in ExeName to kill all currently running executables."
 	},
 	"HideNode":{
 		"prefix": "<HideNode>",
 		"scope": "xml",
-		"body": "<HideNode DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${0:companySecurity}\"/",
+		"body": "<HideNode DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${0:companySecurity}\"/>",
 		"description": "Hide a node from the NetMap."
 	},
 	"GivePlayerUserAccount":{
 		"prefix": "<GivePlayerUserAccount>",
 		"scope": "xml",
-		"body": "<GivePlayerUserAccount DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${3:teamHub}\" Username=\"${0:#PLAYERNAME#}\"/",
+		"body": "<GivePlayerUserAccount DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${3:teamHub}\" Username=\"${0:#PLAYERNAME#}\"/>",
 		"description": "Give the player an existing account so they can automatically login to the specified node."
 	},
 	"ChangeIP":{
 		"prefix": "<ChangeIP>",
 		"scope": "xml",
-		"body": "<ChangeIP  DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${3:finalNode}\" NewIP=\"$0\"/",
+		"body": "<ChangeIP  DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${3:finalNode}\" NewIP=\"$0\"/>",
 		"description": "Change the IP of a specified node. Leave NewIP blank for a random IP."
 	},
 	"HideAllNodes":{
 		"prefix": "<HideAllNodes>",
 		"scope": "xml",
-		"body": "<HideAllNodes DelayHost=\"${1:delayNode}\" Delay=\"$0\"/",
+		"body": "<HideAllNodes DelayHost=\"${1:delayNode}\" Delay=\"$0\"/>",
 		"description": "Hides all nodes visible on the NetMap."
 	},
 	"ShowNode":{
 		"prefix": "<ShowNode>",
 		"scope": "xml",
-		"body": "<ShowNode DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${0:storageServer}\"/",
+		"body": "<ShowNode DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${0:storageServer}\"/>",
 		"description": "Reveals a node on the NetMap."
 	},
 	"SetLock":{
 		"prefix": "<SetLock>",
 		"scope": "xml",
-		"body": "<SetLock DelayHost=\"${1:delayNode}\" Delay=\"$2\" Module=\"${3:terminal}\" IsLocked=\"${4:true}\" IsHidden=\"${0:false}\"/",
+		"body": "<SetLock DelayHost=\"${1:delayNode}\" Delay=\"$2\" Module=\"${3:terminal}\" IsLocked=\"${4:true}\" IsHidden=\"${0:false}\"/>",
 		"description": "Locks or hides the specified module. Choices are terminal, ram, netmap, and display."
 	},
 	"AlertIcon":{
 		"prefix": "<ChangeAlertIcon>",
 		"scope": "xml",
-		"body": "<ChangeAlertIcon Target=\"${1:mainHub}\" Type=\"${2:irchub}\" DelayHost=\"${3:delayNode}\" Delay=\"$0\"/",
+		"body": "<ChangeAlertIcon Target=\"${1:mainHub}\" Type=\"${2:irchub}\" DelayHost=\"${3:delayNode}\" Delay=\"$0\"/>",
 		"description": "LABYRINTHS DLC ONLY - Change the mail icon to irc, irchub, board, or mail."
 	},
 	"NetmapSort":{
 		"prefix": "<ChangeNetmapSortMethod>",
 		"scope": "xml",
-		"body": "<ChangeNetmapSortMethod DelayHost=\"${1:delayNode}\" Delay=\"$2\" Method=\"${0:grid}\"/",
+		"body": "<ChangeNetmapSortMethod DelayHost=\"${1:delayNode}\" Delay=\"$2\" Method=\"${0:grid}\"/>",
 		"description": "Change the way the netmap is sorted."
 	},
 	"Sequencer_Template":{
@@ -250,7 +250,7 @@
 			"\t\t<CancelScreenBleedEffect DelayHost=\"${15:delayNode}\" Delay=\"${16:0.0}\"/>",
 			"\t\t<KillExe DelayHost=\"${17:delayNode}\" Delay=\"${18:0.0}\" ExeName=\"${0:ESequencer}\"/",
 			"\t</HasFlags>",
-			"</ConditionalActions"
+			"</ConditionalActions>"
 		]
 	},
 	"StartingAction":{
@@ -262,7 +262,7 @@
 			"\t<OnConnect target=\"playerComp\">",
 			"\t\t$0",
 			"\t</OnConnect>",
-			"</ConditionalActions"
+			"</ConditionalActions>"
 		],
 		"description": "Defines a simple template for StartingActions."
 	}

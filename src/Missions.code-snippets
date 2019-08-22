@@ -30,7 +30,7 @@
 			"\t\t\t<account comp=\"${24:linkedNodeID2}\" user=\"${25:username}\" pass=\"${0:password}\"/>",
 			"\t\t</attachments>",
 			"\t</email>",
-			"</mission"
+			"</mission>"
 		],
 		"description": "Full template for a basic mission layout using the FileDeletion goal. Refer to the official guide for more mission goals."
 	},
@@ -62,98 +62,98 @@
 			"\t\t\t<account comp=\"${14:assetServer}\" user=\"${15:admin}\" pass=\"${0:alpine}\"/>",
 			"\t\t</attachments>",
 			"\t</email>",
-			"</mission"
+			"</mission>"
 		],
 		"description": "Full template for a basic mission layout using the FileDeletion goal. Refer to the official guide for more mission goals."
 	},
 	"MissionGoalFileDeletion":{
 		"prefix": "<FileDeletionGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"filedeletion\" target=\"${1:nodeID}\" file=\"${2:deleteme.txt}\" path=\"${0:home}\"/",
+		"body": "<goal type=\"filedeletion\" target=\"${1:nodeID}\" file=\"${2:deleteme.txt}\" path=\"${0:home}\"/>",
 		"description": "Task to delete the file on node target, at path/file"
 	},
 	"ClearFolder":{
 		"prefix": "<ClearFolderGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"clearfolder\" target=\"${1:nodeID}\" path=\"${0:sys}\"/",
+		"body": "<goal type=\"clearfolder\" target=\"${1:nodeID}\" path=\"${0:sys}\"/>",
 		"description": "Task to delete ALL files on node target, in the folder at path"
 	},
 	"FileDownload":{
 		"prefix": "<FileDownloadGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"filedownload\" target=\"${1:nodeID}\" file=\"${2:downloadme.txt}\" path=\"${0:home}\"/",
+		"body": "<goal type=\"filedownload\" target=\"${1:nodeID}\" file=\"${2:downloadme.txt}\" path=\"${0:home}\"/>",
 		"description": "Task to download the file at the path"
 	},
 	"FileChange":{
 		"prefix": "<FileChangeGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"filechange\" target=\"${1:nodeID}\" file=\"${2:changeme.txt}\" path=\"${3:home}\" keyword=\"${4:hacknet}\" caseSensetive=\"${0:false}\"/",
+		"body": "<goal type=\"filechange\" target=\"${1:nodeID}\" file=\"${2:changeme.txt}\" path=\"${3:home}\" keyword=\"${4:hacknet}\" caseSensetive=\"${0:false}\"/>",
 		"description": "Task to add the text specified by keyword to the specified file. This is usually achieved by the \"replace\" command. It's possible to make the keyword a larger block and task the player to replace one file with another."
 	},
 	"FileChangeRemove":{
 		"prefix": "<FileChangeRemovalGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"filechange\" target=\"${1:nodeID}\" file=\"${2:changeme.txt}\" path=\"${3:home}\" keyword=\"${0:kaguya}\" removal=\"true\"/",
+		"body": "<goal type=\"filechange\" target=\"${1:nodeID}\" file=\"${2:changeme.txt}\" path=\"${3:home}\" keyword=\"${0:kaguya}\" removal=\"true\"/>",
 		"description": "Task to remove the text specified by keyword to the specified file. This is usually achieved by the \"replace\" command. The extra attribute \"removal\" tasks the player with removing a block of text from a file. Combining this with another filechange task can require a \"replacement\" of text (removing some, adding a different block)."
 	},
 	"GetAdmin":{
 		"prefix": "<GetAdminGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"getadmin\" target=\"${0:nodeID}\"/",
+		"body": "<goal type=\"getadmin\" target=\"${0:nodeID}\"/>",
 		"description": "Task to get admin on the target system."
 	},
 	"DelayGoal":{
 		"prefix": "<DelayGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"delay\" time=\"$0\"/",
+		"body": "<goal type=\"delay\" time=\"$0\"/>",
 		"description": "This task will not complete until \"time\" seconds after the first attempt to complete it has been made."
 	},
 	"HasFlag":{
 		"prefix": "<HasFlagGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"hasflag\" target=\"$0\"/",
+		"body": "<goal type=\"hasflag\" target=\"$0\"/>",
 		"description": "This will only accept if the target flag has been set."
 	},
 	"UploadFile":{
 		"prefix": "<UploadFileGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"uploadfile\" target=\"${1:nodeID}\" file=\"${2:uploadme.txt}\" path=\"${3:home}\" destTarget=\"${4:dropNodeID}\" destPath=\"${0:Drop}\"/",
+		"body": "<goal type=\"uploadfile\" target=\"${1:nodeID}\" file=\"${2:uploadme.txt}\" path=\"${3:home}\" destTarget=\"${4:dropNodeID}\" destPath=\"${0:Drop}\"/>",
 		"description": "Task to require a string passed in via the \"Additional Info\" field in the reply email screen."
 	},
 	"UploadFileDecrypted":{
 		"prefix": "<UploadFileDecryptedGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"uploadfile\" target=\"${1:nodeID}\" file=\"${2:uploadme}.dec\" path=\"${3:home}\" destTarget=\"${4:dropNodeID}\" destPath=\"${5:Drop}\" decrypt=\"true\" decryptPass=\"${0:password}\"/",
+		"body": "<goal type=\"uploadfile\" target=\"${1:nodeID}\" file=\"${2:uploadme}.dec\" path=\"${3:home}\" destTarget=\"${4:dropNodeID}\" destPath=\"${5:Drop}\" decrypt=\"true\" decryptPass=\"${0:password}\"/>",
 		"description": "For uploading encrypted files - put the encrypted name here (ending with .dec usually). It doesn't matter what the filename of the decrypted one becomes."
 	},
 	"GetString":{
 		"prefix": "<GetStringGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"getstring\" target=\"$0\"/",
+		"body": "<goal type=\"getstring\" target=\"$0\"/>",
 		"description": "Task to require a string passed in via the \"Additional Info\" field in the reply email screen."
 	},
 	"AddDegree":{
 		"prefix": "<AddDegreeGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"AddDegree\" owner=\"${1:John Doe}\" degree=\"${2:Masters of Computer Science}\" uni=\"${3:Manchester University}\" gpa=\"${0:3.4}\"/",
+		"body": "<goal type=\"AddDegree\" owner=\"${1:John Doe}\" degree=\"${2:Masters of Computer Science}\" uni=\"${3:Manchester University}\" gpa=\"${0:3.4}\"/>",
 		"description": "Task to add the degree matching the degree name and uni and GPA details for the listed owner. This task *requires* an academic server to exist."
 	},
 	"WipeDegrees":{
 		"prefix": "<WipeDegreesGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"wipedegrees\" owner=\"${0:Jane Doe}\"/",
+		"body": "<goal type=\"wipedegrees\" owner=\"${0:Jane Doe}\"/>",
 		"description": "Task to remove all degrees from the academic server for a specified owner. Note that for this one, you *MUST* have the ID of your database be \"academic\" or it wont find it."
 	},
 	"SendEmail":{
 		"prefix": "<SendEmailGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"sendemail\" mailServer=\"${1:jmail}\" recipient=\"${2:mailGuy}\" subject=\"${0:Important!}\"/",
+		"body": "<goal type=\"sendemail\" mailServer=\"${1:jmail}\" recipient=\"${2:mailGuy}\" subject=\"${0:Important!}\"/>",
 		"description": "NOTE: THIS IS KNOWN TO BE A BUGGY GOAL - Task to have an email sent to a specified address with a defined subject."
 	},
 	"GetAdminPassword":{
 		"prefix": "<GetAdminPasswordGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"getadminpasswordstring\" target=\"${0:nodeID}\"/",
+		"body": "<goal type=\"getadminpasswordstring\" target=\"${0:nodeID}\"/>",
 		"description": "Requires the player to respond with the current admin password for the linked server. This is useful for servers that change passwords - like ones with password resetting admins, and databases that allow for admin password reset."
 	}
 }

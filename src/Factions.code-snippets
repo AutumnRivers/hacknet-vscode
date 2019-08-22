@@ -8,7 +8,7 @@
 			"\t",
 			"\t$0",
 			"\t",
-			"</CustomFaction"
+			"</CustomFaction>"
 		],
 		"description": "Your faction file should start with this."
 	},
@@ -19,7 +19,7 @@
 		[
 			"<Action ValueRequired=\"${1:1}\" Flags=\"$2\">",
 			"\t$0",
-			"</Action"
+			"</Action>"
 		],
 		"description": "An action(s) to run when the requirements are met. Used like conditional actions."
 	}

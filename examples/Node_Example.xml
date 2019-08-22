@@ -41,7 +41,7 @@
 
     <variableMissionListingServer name="TwilightZone" iconPath="twLogo.png" articleFolderPath="Missions/TwilightZone" color="120,200,2" assigner="true" public="false" title="Twilight Zone Mission Hub"/>
 
-    <missionHubServer groupName="Moonshine" serviceName="Moonshine Security" missionFodlerpath="Missions/MoonshineSecurity" themeColor="200,10,10" lineColor="255,80,80" backgroundColor="20,20,20" allowAbandon="false"/>
+    <missionHubServer groupName="Moonshine" serviceName="Moonshine Security" missionFolderpath="Missions/MoonshineSecurity" themeColor="200,10,10" lineColor="255,80,80" backgroundColor="20,20,20" allowAbandon="false"/>
 
     <file path="home" name="CreditsData.txt">%Extension
     ^Made by You!
