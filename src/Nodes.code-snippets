@@ -192,7 +192,7 @@
 	"MissionHubDaemon":{
 		"prefix": "<MissionHubServer>",
 		"scope": "xml",
-		"body": "<missionHubServer groupName=\"${1:CSEC}\" serviceName=\"${2:CSEC Mission Hub}\" missionFolderpath=\"Missions/${3:CSEC}\" themeColor=\"${4:200,10,10}\" lineColor=\"${5:255,80,80}\" backgroundColor=\"${6:20,20,20}\" allowAbandon=\"${0:false}\"/>",
+		"body": "<missionHubServer groupName=\"${1:CSEC}\" serviceName=\"${2:CSEC Mission Hub}\" missionFolderPath=\"Missions/${3:CSEC}\" themeColor=\"${4:200,10,10}\" lineColor=\"${5:255,80,80}\" backgroundColor=\"${6:20,20,20}\" allowAbandon=\"${0:false}\"/>",
 		"description": "Creates a CSEC-Style mission board"
 	},
 	"CreditsDaemon":{

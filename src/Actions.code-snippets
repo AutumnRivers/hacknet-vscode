@@ -146,7 +146,7 @@
 	"LaunchHackScript":{
 		"prefix": "<LaunchHackScript>",
 		"scope": "xml",
-		"body": "<LaunchHackScript FilePath=\"${1:Scripts}/${2:HackerScript.txt}\" DelayHost=\"${3:delayNode}\" Delay=\"$4\" SourceComp=\"${5:enemyNode}\" TargetComp=\"${6:playerComp}\" RequireLogsOnSource=\"${7:false}\" RequireSourceIntact=\"${0:true}\"/>",
+		"body": "<LaunchHackScript Filepath=\"${1:Scripts}/${2:HackerScript.txt}\" DelayHost=\"${3:delayNode}\" Delay=\"$4\" SourceComp=\"${5:enemyNode}\" TargetComp=\"${6:playerComp}\" RequireLogsOnSource=\"${7:false}\" RequireSourceIntact=\"${0:true}\"/>",
 		"description": "Launch a hacker script. Oo, spooky!"
 	},
 	"SwitchToTheme":{
