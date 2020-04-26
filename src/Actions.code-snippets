@@ -134,7 +134,7 @@
 	"AddConditionalActions":{
 		"prefix": "<AddConditionalActions>",
 		"scope": "xml",
-		"body": "<AddConditionalActions FilePath=\"Actions/${1:NextAction.xml}\" DelayHost=\"${2:delayNode}\" Delay=\"$0\"/>",
+		"body": "<AddConditionalActions Filepath=\"Actions/${1:NextAction.xml}\" DelayHost=\"${2:delayNode}\" Delay=\"$0\"/>",
 		"description": "Load in a new action file."
 	},
 	"SaveGame":{

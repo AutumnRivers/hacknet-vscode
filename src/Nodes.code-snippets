@@ -65,7 +65,7 @@
 	"PortRemapping":{
 		"prefix": "<PortRemap>",
 		"scope": "xml",
-		"body": "<portRemap>${1:21}=${2:265},${3:80}=${0:8080}</portRemap",
+		"body": "<portRemap>${1:21}=${2:265},${3:80}=${0:8080}</portRemap>",
 		"description": "Allows you to remap ports. You can use as many as you'd like."
 	},
 	"Linking":{
