@@ -248,7 +248,7 @@
 			"\t",
 			"\t<HasFlags requiredFlags=\"${14:seqComplete}\">",
 			"\t\t<CancelScreenBleedEffect DelayHost=\"${15:delayNode}\" Delay=\"${16:0.0}\"/>",
-			"\t\t<KillExe DelayHost=\"${17:delayNode}\" Delay=\"${18:0.0}\" ExeName=\"${0:ESequencer}\"/",
+			"\t\t<KillExe DelayHost=\"${17:delayNode}\" Delay=\"${18:0.0}\" ExeName=\"${0:ESequencer}\"/>",
 			"\t</HasFlags>",
 			"</ConditionalActions>"
 		]

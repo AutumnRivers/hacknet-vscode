@@ -117,7 +117,7 @@
 	"UploadFile":{
 		"prefix": "<UploadFileGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"uploadfile\" target=\"${1:nodeID}\" file=\"${2:uploadme.txt}\" path=\"${3:home}\" destTarget=\"${4:dropNodeID}\" destPath=\"${0:Drop}\"/>",
+		"body": "<goal type=\"fileupload\" target=\"${1:nodeID}\" file=\"${2:uploadme.txt}\" path=\"${3:home}\" destTarget=\"${4:dropNodeID}\" destPath=\"${0:Drop}\"/>",
 		"description": "Task to require a string passed in via the \"Additional Info\" field in the reply email screen."
 	},
 	"UploadFileDecrypted":{
