@@ -329,5 +329,23 @@
 			"</memoryDumpFile>"
 		],
 		"description": "LABYRINTHS DLC ONLY - Memory dump file - this can be downloaded and analyzed with MemForensics.exe"
+	},
+	"eosDevice":{
+		"prefix": "<eosDevice>",
+		"scope": "xml",
+		"body":
+		[
+			"<eosDevice name=\"${1:Matt's ePhone 4S}\" id=\"${2:eosIntro}\" icon=\"${3:ePhone2}\" empty=\"${4|true,false|}\" ${5:passOverride=\"${6:notAlpine}\"}>",
+			"\t<note>${7:Note title}",
+			"\t${8:Note body, can be multiple lines}</note>",
+			"\t",
+			"\t$BLOCK_COMMENT_START It's important to keep everything in your files organized - so let's leave some space between tags $BLOCK_COMMENT_END",
+			"\t",
+			"\t<mail username=\"${9:matt@jmail.com}\" pass=\"${10:secretpassword}\"/>",
+			"\t",
+			"\t<file path=\"${11:eos/test}\" name=\"${12:crackedFile.txt}\">${0:These are best for cracked phones!}</file>",
+			"</eosDevice>"
+		],
+		"description": "This snippet will create an eOS template for you. These can only be found with eosDeviceScanner.exe."
 	}
 }

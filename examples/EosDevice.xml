@@ -1,0 +1,18 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="mobileNode" name="Autumn's Strudelbook" type="4" icon="DLCLaptop" security="0" allowsDefaultBootModule="true">
+    
+    <ports>21,1433,6881</ports>
+    <portsForCrack val="2"/>
+
+    <eosDevice name="Autumn's LunarMobile" id="lunareos1" icon="ePhone2" empty="false" passOverride="vscode">
+        <note>Grocery list
+        Apples, oranges, the souls of the innocent</note>
+        
+        <!-- It's important to keep everything in your files organized - so let's leave some space between tags -->
+        
+        <mail username="autumn@nightmail.com" pass="watchkonohanakitan"/>
+        
+        <file path="eos/logs" name="synclogs.txt">Synced with 1.2.3.4</file>
+    </eosDevice>
+
+</Computer

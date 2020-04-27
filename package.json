@@ -1,6 +1,6 @@
 {
   "name": "hacknet-vscode",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "Hacknet Extension development, made easy in Visual Studio Code.",
   "directories": {
     "example": "examples"
