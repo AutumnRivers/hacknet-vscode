@@ -141,7 +141,7 @@
 	"WipeDegrees":{
 		"prefix": "<WipeDegreesGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"wipedegrees\" owner=\"${0:Jane Doe}\"/>",
+		"body": "<goal type=\"wipeDegrees\" owner=\"${0:Jane Doe}\"/>",
 		"description": "Task to remove all degrees from the academic server for a specified owner. Note that for this one, you *MUST* have the ID of your database be \"academic\" or it wont find it."
 	},
 	"SendEmail":{

@@ -187,7 +187,7 @@
 	"HideNode":{
 		"prefix": "<HideNode>",
 		"scope": "xml",
-		"body": "<HideNode DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${0:companySecurity}\"/>",
+		"body": "<HideNode DelayHost=\"${1:delayNode}\" Delay=\"$2\" Target=\"${0:companySecurity}\"/>",
 		"description": "Hide a node from the NetMap."
 	},
 	"GivePlayerUserAccount":{
@@ -211,7 +211,7 @@
 	"ShowNode":{
 		"prefix": "<ShowNode>",
 		"scope": "xml",
-		"body": "<ShowNode DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${0:storageServer}\"/>",
+		"body": "<ShowNode DelayHost=\"${1:delayNode}\" Delay=\"$2\" Target=\"${0:storageServer}\"/>",
 		"description": "Reveals a node on the NetMap."
 	},
 	"SetLock":{
