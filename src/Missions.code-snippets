@@ -155,5 +155,26 @@
 		"scope": "xml",
 		"body": "<goal type=\"getadminpasswordstring\" target=\"${0:nodeID}\"/>",
 		"description": "Requires the player to respond with the current admin password for the linked server. This is useful for servers that change passwords - like ones with password resetting admins, and databases that allow for admin password reset."
+	},
+	"NodeAttachment":{
+		"prefix": "<AttachmentNode>",
+		"scope": "xml",
+		"body": "<link comp=\"${0:assetServer}\"/>",
+		"description": "Attaches a node to the email for the mission. Set the comp value to the desired node ID. When the user clicks the attachment, the node will be added to the player's netmap."
+	},
+	"NoteAttachment":{
+		"prefix": "<AttachNote>",
+		"scope": "xml",
+		"body": [
+			"<note title=\"${1:Objectives}\">${2:This is a note.}",
+			"${0:It can be multiple lines, too!}</note>"
+		],
+		"description": "Attaches a note to the email for the mission. When the user clicks the attachment, the note will be added to their notes and instantly appear in their RAM."
+	},
+	"AccountAttachment":{
+		"prefix": "<AttachAccount>",
+		"scope": "xml",
+		"body": "<account comp=\"${1:assetServer}\" user=\"${2:admin}\" pass=\"${0:honeypot}\"/>",
+		"description": "Attaches a node account to the email. When the user clicks the attachment, they will be given the account for that node (if the account exists.) You can also use this independently of the node attachment, as the node will be added to the netmap from this as well."
 	}
 }
