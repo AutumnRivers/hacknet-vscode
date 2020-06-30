@@ -123,7 +123,7 @@
 	"UploadFileDecrypted":{
 		"prefix": "<UploadFileDecryptedGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"uploadfile\" target=\"${1:nodeID}\" file=\"${2:uploadme}.dec\" path=\"${3:home}\" destTarget=\"${4:dropNodeID}\" destPath=\"${5:Drop}\" decrypt=\"true\" decryptPass=\"${0:password}\"/>",
+		"body": "<goal type=\"fileupload\" target=\"${1:nodeID}\" file=\"${2:uploadme}.dec\" path=\"${3:home}\" destTarget=\"${4:dropNodeID}\" destPath=\"${5:Drop}\" decrypt=\"true\" decryptPass=\"${0:password}\"/>",
 		"description": "For uploading encrypted files - put the encrypted name here (ending with .dec usually). It doesn't matter what the filename of the decrypted one becomes."
 	},
 	"GetString":{

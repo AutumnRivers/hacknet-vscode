@@ -56,7 +56,7 @@
 	"RunFunction":{
 		"prefix":"<RunFunction>",
 		"scope": "xml",
-		"body": "<RunFunction FunctionName=\"$1\" FunctionValue=\"${0:0}\"/>",
+		"body": "<RunFunction FunctionName=\"$1\" FunctionValue=\"${2:0}\" DelayHost=\"${3:delayNode}\" Delay=\"${0:1.0}\"/>",
 		"description": "Run a mission function."
 	},
 	"LoadMission":{
@@ -211,7 +211,7 @@
 	"ShowNode":{
 		"prefix": "<ShowNode>",
 		"scope": "xml",
-		"body": "<ShowNode DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${0:storageServer}\"/>",
+		"body": "<ShowNode DelayHost=\"${1:delayNode}\" Delay=\"$2\" Target=\"${0:storageServer}\"/>",
 		"description": "Reveals a node on the NetMap."
 	},
 	"SetLock":{
