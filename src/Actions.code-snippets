@@ -59,7 +59,7 @@
 	"RunFunction":{
 		"prefix":"<RunFunction>",
 		"scope": "xml",
-		"body": "<RunFunction FunctionName=\"${1|setFaction:factionID,addRank,addRankSilent,addFlags:CSEC_Member,removeFlags:flag1,changeSong,loadConditionalActions:Actions/CoolAction.xml,setHubServer:hubServerID,setAssetServer:assetServerID,playCustomSong:Music/CoolSong.ogg,playCustomSongImmediatley:Music/IntenseSong.ogg|}\" FunctionValue=\"${3:0}\" DelayHost=\"${4:delayNode}\" Delay=\"${0:1.0}\"/>",
+		"body": "<RunFunction FunctionName=\"${1|setFaction:factionID,addRank,addRankSilent,addFlags:CSEC_Member,removeFlags:flag1,changeSong,loadConditionalActions:Actions/CoolAction.xml,setHubServer:hubServerID,setAssetServer:assetServerID,playCustomSong:Music/CoolSong.ogg,playCustomSongImmediatley:Music/IntenseSong.ogg,changeSongDLC|}\" FunctionValue=\"${3:0}\" DelayHost=\"${4:delayNode}\" Delay=\"${0:1.0}\"/>",
 		"description": "Run a mission function."
 	},
 	"LoadMission":{

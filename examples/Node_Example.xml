@@ -78,4 +78,11 @@
         </TextRecord>
     </DatabaseDaemon>
 
+    <!-- Remake: Program Files -->
+    <file path="bin" name="FTPSprint.exe">#FTP_FAST_EXE#</file>
+
+    <file path="bin" name="TorrentStreamInjector.exe">#TORRENT_EXE#</file>
+
+    <file path="bin" name="ClockV2.exe">#CLOCK_V2_EXE#</file>
+
 </Computer>
