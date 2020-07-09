@@ -1,4 +1,3 @@
 **/.vscode
 **/.gitignore
-**/hacknet-vscode-1.0.0.vsix
 !**/.vscode/launch.json

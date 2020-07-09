@@ -69,25 +69,25 @@
 	"MissionGoalFileDeletion":{
 		"prefix": "<FileDeletionGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"filedeletion\" target=\"${1:nodeID}\" file=\"${2:deleteme.txt}\" path=\"${0|home,bin,log,sys|}\"/>",
+		"body": "<goal type=\"filedeletion\" target=\"${1:nodeID}\" file=\"${2:deleteme.txt}\" path=\"${3|home,bin,log,sys|}\"/>$0",
 		"description": "Task to delete the file on node target, at path/file"
 	},
 	"ClearFolder":{
 		"prefix": "<ClearFolderGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"clearfolder\" target=\"${1:nodeID}\" path=\"${0|sys,home,bin,log|}\"/>",
+		"body": "<goal type=\"clearfolder\" target=\"${1:nodeID}\" path=\"${2|sys,home,bin,log|}\"/>$0",
 		"description": "Task to delete ALL files on node target, in the folder at path"
 	},
 	"FileDownload":{
 		"prefix": "<FileDownloadGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"filedownload\" target=\"${1:nodeID}\" file=\"${2:downloadme.txt}\" path=\"${0|home,bin,log,sys|}\"/>",
+		"body": "<goal type=\"filedownload\" target=\"${1:nodeID}\" file=\"${2:downloadme.txt}\" path=\"${3|home,bin,log,sys|}\"/>$0",
 		"description": "Task to download the file at the path"
 	},
 	"FileChange":{
 		"prefix": "<FileChangeGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"filechange\" target=\"${1:nodeID}\" file=\"${2:changeme.txt}\" path=\"${3|home,bin,log,sys|}\" keyword=\"${4:hacknet}\" caseSensetive=\"${0|false,true|}\"/>",
+		"body": "<goal type=\"filechange\" target=\"${1:nodeID}\" file=\"${2:changeme.txt}\" path=\"${3|home,bin,log,sys|}\" keyword=\"${4:hacknet}\" caseSensetive=\"${5|false,true|}\"/>$0",
 		"description": "Task to add the text specified by keyword to the specified file. This is usually achieved by the \"replace\" command. It's possible to make the keyword a larger block and task the player to replace one file with another."
 	},
 	"FileChangeRemove":{
@@ -117,7 +117,7 @@
 	"UploadFile":{
 		"prefix": "<UploadFileGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"fileupload\" target=\"${1:nodeID}\" file=\"${2:uploadme.txt}\" path=\"${3|home,bin,log,sys|}\" destTarget=\"${4:dropNodeID}\" destPath=\"${0|Drop/Uploads,Drop,home,bin,log,sys|}\"/>",
+		"body": "<goal type=\"fileupload\" target=\"${1:nodeID}\" file=\"${2:uploadme.txt}\" path=\"${3|home,bin,log,sys|}\" destTarget=\"${4:dropNodeID}\" destPath=\"${5|Drop/Uploads,Drop,home,bin,log,sys|}\"/>$0",
 		"description": "Task to require a string passed in via the \"Additional Info\" field in the reply email screen."
 	},
 	"UploadFileDecrypted":{

@@ -23,7 +23,7 @@
 	"":{
 		"prefix": "HacknetNodePort",
 		"scope": "xml",
-		"body": "${0|21,22,25,80,1433,104,6881,443,192,211,9418,3724,3659|}",
+		"body": "${1|21,22,25,80,1433,104,6881,443,192,211,9418,3724,3659|}",
 		"description": "Opens a selection for node ports."
 	},
 	"Firewall":{
@@ -41,7 +41,7 @@
 	"Account":{
 		"prefix": "<NodeAccount>",
 		"scope": "xml",
-		"body": "<account username=\"${1:bitwise}\" password=\"${2:passw0rd}\" type=\"${0|0,1,2,3|}\"/>",
+		"body": "<account username=\"${1:bitwise}\" password=\"${2:passw0rd}\" type=\"${3|0,1,2,3|}\"/>$0",
 		"description": "Accounts for nodes within Hacknet."
 	},
 	"AdminPass":{
@@ -53,7 +53,7 @@
 	"AdminType":{
 		"prefix": "<AdminType>",
 		"scope": "xml",
-		"body": "<admin type=\"${1|basic,none,fast|}\" isSuper=\"${2|false,true|}\" resetPassword=\"${0|false,true|}\"/>",
+		"body": "<admin type=\"${1|basic,none,fast|}\" isSuper=\"${2|false,true|}\" resetPassword=\"${3|false,true|}\"/>$0",
 		"description": "The type of admin account on the node."
 	},
 	"TraceTimer":{
@@ -83,7 +83,7 @@
 	"PositionNear":{
 		"prefix": "<PositionNear>",
 		"scope": "xml",
-		"body": "<positionNear target=\"${1:closeNode}\" position=\"${2:1}\" total=\"${3:3}\" extraDistance=\"${4:0.5}\" force=\"${0|false,true|}\"/>",
+		"body": "<positionNear target=\"${1:closeNode}\" position=\"${2:1}\" total=\"${3:3}\" extraDistance=\"${4:0.5}\" force=\"${5|false,true|}\"/>$0",
 		"description": "This positions this computer near the target on the network map."
 	},
 	"TextFile":{
@@ -198,7 +198,7 @@
 	"MissionHubDaemon":{
 		"prefix": "<MissionHubServer>",
 		"scope": "xml",
-		"body": "<missionHubServer groupName=\"${1:CSEC}\" serviceName=\"${2:CSEC Mission Hub}\" missionFolderPath=\"Missions/${3:CSEC}\" themeColor=\"${4:200,10,10}\" lineColor=\"${5:255,80,80}\" backgroundColor=\"${6:20,20,20}\" allowAbandon=\"${0|false,true|}\"/>",
+		"body": "<missionHubServer groupName=\"${1:CSEC}\" serviceName=\"${2:CSEC Mission Hub}\" missionFolderPath=\"Missions/${3:CSEC}\" themeColor=\"${4:200,10,10}\" lineColor=\"${5:255,80,80}\" backgroundColor=\"${6:20,20,20}\" allowAbandon=\"${7|false,true|}\"/>$0",
 		"description": "Creates a CSEC-Style mission board"
 	},
 	"CreditsDaemon":{
@@ -240,7 +240,7 @@
 	"WhitelistSource":{
 		"prefix": "<WhitelistDaemonSource>",
 		"scope": "xml",
-		"body": "<WhitelistAuthenticatorDaemon SelfAuthenticating=\"${0|false,true|}\" />",
+		"body": "<WhitelistAuthenticatorDaemon SelfAuthenticating=\"${1|false,true|}\" />$0",
 		"description": "This is your basic whitelist server \"host\" type - it wont check incoming connection to itself against it's list. It only serves a protective function against *other* servers."
 	},
 	"WhitelistProtected":{

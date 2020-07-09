@@ -71,13 +71,13 @@
 	"AddAsset":{
 		"prefix": "<AddAsset>",
 		"scope": "xml",
-		"body": "<AddAsset FileName=\"$1\" FileContents=\"$2\" TargetComp=\"${3:playerComp}\" TargetFolderpath=\"${0|home,bin,log,sys|}\"/>",
+		"body": "<AddAsset FileName=\"$1\" FileContents=\"$2\" TargetComp=\"${3:playerComp}\" TargetFolderpath=\"${4|home,bin,log,sys|}\"/>$0",
 		"description": "Remotely add an asset to the target node."
 	},
 	"CopyAsset":{
 		"prefix": "<CopyAsset>",
 		"scope": "xml",
-		"body": "<CopyAsset DestFilePath=\"${1|home,bin,log,sys|}\" DestComp=\"${2:playerComp}\" SourceComp=\"${3:assetNode}\" SourceFileName=\"${4:copycat.txt}\" SourceFilePath=\"${0|home,bin,log,sys|}\"/>",
+		"body": "<CopyAsset DestFilePath=\"${1|home,bin,log,sys|}\" DestComp=\"${2:playerComp}\" SourceComp=\"${3:assetNode}\" SourceFileName=\"${4:copycat.txt}\" SourceFilePath=\"${5|home,bin,log,sys|}\"/>$0",
 		"description": "Copy a file from a remote node."
 	},
 	"AddMissionToHubServer":{
@@ -149,7 +149,7 @@
 	"LaunchHackScript":{
 		"prefix": "<LaunchHackScript>",
 		"scope": "xml",
-		"body": "<LaunchHackScript Filepath=\"${1:Scripts}/${2:HackerScript}.txt\" DelayHost=\"${3:delayNode}\" Delay=\"$4\" SourceComp=\"${5:enemyNode}\" TargetComp=\"${6:playerComp}\" RequireLogsOnSource=\"${7|false,true|}\" RequireSourceIntact=\"${0|true,false|}\"/>",
+		"body": "<LaunchHackScript Filepath=\"${1:Scripts}/${2:HackerScript}.txt\" DelayHost=\"${3:delayNode}\" Delay=\"$4\" SourceComp=\"${5:enemyNode}\" TargetComp=\"${6:playerComp}\" RequireLogsOnSource=\"${7|false,true|}\" RequireSourceIntact=\"${8|true,false|}\"/>$0",
 		"description": "Launch a hacker script. Oo, spooky!"
 	},
 	"SwitchToTheme":{
@@ -220,7 +220,7 @@
 	"SetLock":{
 		"prefix": "<SetLock>",
 		"scope": "xml",
-		"body": "<SetLock DelayHost=\"${1:delayNode}\" Delay=\"$2\" Module=\"${3|terminal,ram,netmap,display|}\" IsLocked=\"${4|true,false|}\" IsHidden=\"${0|false,true|}\"/>",
+		"body": "<SetLock DelayHost=\"${1:delayNode}\" Delay=\"$2\" Module=\"${3|terminal,ram,netmap,display|}\" IsLocked=\"${4|true,false|}\" IsHidden=\"${5|false,true|}\"/>$0",
 		"description": "Locks or hides the specified module. Choices are terminal, ram, netmap, and display."
 	},
 	"AlertIcon":{

@@ -42,17 +42,7 @@ Anything not listed here is likely not large enough to be considered a "template
 If you're still not getting the hang of this, that's okay! Join the [official Hacknet Discord](https://discord.gg/hacknet) and I'll do my best to help. It'll be hard to miss me.
 
 # Examples
-## Sequencer Example
-![](https://cdn.discordapp.com/attachments/453489057117372417/548239180031852554/SequencerExample.gif)
-
-## Database Example
-![](https://cdn.discordapp.com/attachments/377282421504344065/548321665785004034/DatabaseExample.gif)
-
-## HackerScript Example
-![](https://cdn.discordapp.com/attachments/377282421504344065/548355937254244371/HackerScriptExample.gif)
-
-## Mission Example
-![](https://cdn.discordapp.com/attachments/377284586326982666/548712683260608547/MissionExample.gif)
+Note to self: add new examples here.
 
 # Installing
 1. [Download the latest release](https://www.github.com/SmartieCodes/hacknet-vscode/releases)
