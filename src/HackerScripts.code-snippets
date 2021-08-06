@@ -4,7 +4,7 @@
 		"scope": "plaintext",
 		"body":
 		[
-			"config ${1:playerComp} ${2:enemyComp} ${3:0.5} $#%#$",
+			"config ${1:targetNode} ${2:sourceNode} ${3:0.5} $#%#$",
 			"",
 			"$0"
 		],
@@ -24,54 +24,49 @@
 	"WriteLine":{
 		"prefix": "WriteLine",
 		"scope": "plaintext",
-		"body": "writel $0 $#%#$",
+		"body": "writel $1 $#%#$$0",
 		"description": "This will write a line to the terminal if the player is the target."
 	},
 	"WriteLineSilent":{
 		"prefix": "WriteLineSilent",
 		"scope": "plaintext",
-		"body": "writel_silent $0 $#%#$",
+		"body": "writel_silent $1 $#%#$$0",
 		"description": "This will write a line to the terminal if the player is the target. Also does it without flashing the UI and silencing the beep."
 	},
 	"Write":{
 		"prefix": "Write",
 		"scope": "plaintext",
-		"body": "write $0 $#%#$",
+		"body": "write $1 $#%#$$0",
 		"description": "This will write a string to the terminal if the player is the target."
 	},
 	"WriteSilent":{
 		"prefix": "WriteSilent",
 		"scope": "plaintext",
-		"body": "write_silent $0 $#%#$",
+		"body": "write_silent $1 $#%#$$0",
 		"description": "This will write a string to the terminal if the player is the target. Also does it without flashing the UI and silencing the beep."
 	},
 	"Delay":{
 		"prefix": "Delay",
 		"scope": "plaintext",
-		"body": "delay ${0:2} $#%#$",
+		"body": "delay ${1:2} $#%#$$0",
 		"description": "Waits to continue until the specified time is up."
 	},
 	"OpenPort":{
 		"prefix": "OpenPort",
 		"scope": "plaintext",
-		"body": "openPort ${0:21} $#%#$",
+		"body": "openPort ${1|21,22,25,80,1433,104,6881,443,192,211,9418,3724,3659|} $#%#$$0",
 		"description": "Opens a port on the target and leaves a log."
 	},
 	"Music":{
 		"prefix": "MusicToggle",
 		"scope": "plaintext",
-		"body":
-		[
-			"stopMusic $#%#$",
-			"$0",
-			"startMusic $#%#$"
-		],
+		"body": "${1|stop,start|}Music $#%#$$0",
 		"description": "Toggles music on and off. stopMusic stops the music with a stinger."
 	},
 	"ClearTerminal":{
 		"prefix": "ClearTerminal",
 		"scope": "plaintext",
-		"body": "clearTerminal $#%#$",
+		"body": "clearTerminal $#%#$$0",
 		"description": "Clear the terminal of the player, if they are the target."
 	},
 	"HideUI":{
@@ -79,10 +74,8 @@
 		"scope": "plaintext",
 		"body":
 		[
-			"hideNetMap $#%#$",
-			"hideRam $#%#$",
-			"hideDisplay $#%#$",
-			"hideTerminal $#%#$"
+			"hide${1|NetMap,Ram,Display,Terminal} $#%#$",
+			"$0"
 		],
 		"description": "These commands hide stuff if the player is connected to them. BE VERY CAREFUL WITH THIS - player cant get it back alone."
 	},
@@ -91,53 +84,51 @@
 		"scope": "plaintext",
 		"body":
 		[
-			"showNetMap $#%#$",
-			"showRam $#%#$",
-			"showDisplay $#%#$",
-			"showTerminal $#%#$"
+			"show${1|NetMap,Ram,Display,Terminal} $#%#$",
+			"$0"
 		],
 		"description": "These commands bring the windows back."
 	},
 	"TrackSeq":{
 		"prefix": "TrackSeq",
 		"scope": "plaintext",
-		"body": "trackseq $#%#$",
-		"description": "This flags it so that the player will have to do the ETAS if they fail the next forkbomb that they receive, if they have the CSEC flag"
+		"body": "trackseq $#%#$$0",
+		"description": "This flags it so that the player will have to do the ETAS if they fail the next forkbomb that they receive, if they have the CSEC_Member flag"
 	},
 	"InstantTrace":{
 		"prefix": "InstantTrace",
 		"scope": "plaintext",
-		"body": "instanttrace $#%#$",
-		"description": "This is a brutal command that instantly starts the ETAS for the player if they have the CSEC flag."
+		"body": "instanttrace $#%#$$0",
+		"description": "This is a brutal command that instantly starts the ETAS for the player if they have the CSEC_Member flag."
 	},
 	"FlashUI":{
 		"prefix": "Flash",
 		"scope": "plaintext",
-		"body": "flash $#%#$",
+		"body": "flash $#%#$$0",
 		"description": "This will flash the UI if the player is the target."
 	},
 	"ForkBomb":{
 		"prefix": "ForkBomb",
 		"scope": "plaintext",
-		"body": "forkbomb $#%#$",
+		"body": "forkbomb $#%#$$0",
 		"description": "Launches a forkbomb on the target. Crashing it instantly if non-player."
 	},
 	"DeleteFile":{
 		"prefix": "DeleteFile",
 		"scope": "plaintext",
-		"body": "delete /${1:sys} ${0:x-server.sys} $#%#$",
+		"body": "delete /${1:sys} ${2:x-server.sys} $#%#$$0",
 		"description": "Deletes a file. You can specify any folder and file here, or * for all files in that folder."
 	},
 	"SetAdminPass":{
 		"prefix": "SetAdminPass",
 		"scope": "plaintext",
-		"body": "setAdminPass $0 $#%#$",
+		"body": "setAdminPass $1 $#%#$$0",
 		"description": "Sets the admin password of this computer to be whatever you set it to."
 	},
 	"MakeFile":{
 		"prefix": "MakeFile",
 		"scope": "plaintext",
-		"body": "makeFile ${1:home} ${2:file.txt} $0 $#%#$",
+		"body": "makeFile ${1:home} ${2:file.txt} $3 $#%#$$0",
 		"description": "Makes a new file in the folder named in the first argument (cant do subfolders, sorry) with the name and content you set it to."
 	},
 	"CDTray":{
@@ -145,9 +136,8 @@
 		"scope": "plaintext",
 		"body":
 		[
-			"openCDTray $#%#$",
-			"$0",
-			"closeCDTray $#%#$"
+			"${1|open,close|}CDTray $#%#$",
+			"$0"
 		],
 		"description": "YEP!"
 	}

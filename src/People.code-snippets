@@ -5,7 +5,7 @@
 		"body":
 		[
 			"<?xml version = \"1.0\" encoding = \"UTF-8\" ?>",
-			"<Person id=\"${1:JohnDoe}\" handle=\"${2:J0hnD0eGaming}\" firstName=\"${3:John}\" lastName=\"${4:Doe}\" isMale=\"${5:true}\" forceHasNeopals=\"${6:false}\">",
+			"<Person id=\"${1:JohnDoe}\" handle=\"${2:J0hnD0eGaming}\" firstName=\"${3:John}\" lastName=\"${4:Doe}\" isMale=\"${5|true,false|}\" forceHasNeopals=\"${6|false,true|}\">",
 			"\t<Birthplace name=\"${7:West Virginia}\">",
 			"\t<Notes>${8:These will not show up in game. Take me home, country roads.}</Notes>",
 			"\t$0",
@@ -37,7 +37,7 @@
 			"\t<Perscription>${4:You can have multiple of these.}</Perscription>",
 			"\t<Notes>${5:These show up in medical records.}</Notes>",
 			"</Medical>",
-			"<DOB>${0:17/02/1990 09:00:00}</DOB>"
+			"<DOB>${6:DD}/${7:MM}/${8:YYYY} ${9:09}:${10:00}:${0:00}</DOB>"
 		]
 	}
 }

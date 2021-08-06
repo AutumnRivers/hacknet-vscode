@@ -5,7 +5,7 @@
 		"body":
 		[
 			"<?xml version = \"1.0\" encoding = \"UTF-8\" ?>",
-			"<Computer id=\"${1:nodeID}\" name=\"${2:Bitwise Test PC}\" type=\"${3:4}\" icon=\"${4:laptop}\" security=\"${5:2}\" ip=\"${6:123.123.123.123}\" allowsDefaultBootModule=\"${7:true}\">",
+			"<Computer id=\"${1|nodeID,jmail,playerComp,ispComp,delay|}\" name=\"${2:Bitwise Test PC}\" type=\"${3:4}\" icon=\"${4:laptop}\" security=\"${5:2}\" ip=\"${6:123.123.123.123}\" allowsDefaultBootModule=\"${7:true}\">",
 			"\t$0",
 			"</Computer>"
 		],
@@ -15,10 +15,16 @@
 		"prefix":"<NodePorts>",
 		"scope": "xml",
 		"body":[
-			"<ports>${1:21,22,25,80,1433,6881,554}</ports>",
+			"<ports>${1|21,22,25,80,1433,104,6881,443,192,211,9418,3724,3659|}</ports>",
 			"<portsForCrack val=\"$0\"/>"
 		],
 		"description": "The basic structure for ports in a Hacknet node."
+	},
+	"":{
+		"prefix": "HacknetNodePort",
+		"scope": "xml",
+		"body": "${1|21,22,25,80,1433,104,6881,443,192,211,9418,3724,3659|}",
+		"description": "Opens a selection for node ports."
 	},
 	"Firewall":{
 		"prefix": "<Firewall>",
@@ -35,7 +41,7 @@
 	"Account":{
 		"prefix": "<NodeAccount>",
 		"scope": "xml",
-		"body": "<account username=\"${1:bitwise}\" password=\"${2:passw0rd}\" type=\"${0:0}\"/>",
+		"body": "<account username=\"${1:bitwise}\" password=\"${2:passw0rd}\" type=\"${3|0,1,2,3|}\"/>$0",
 		"description": "Accounts for nodes within Hacknet."
 	},
 	"AdminPass":{
@@ -47,7 +53,7 @@
 	"AdminType":{
 		"prefix": "<AdminType>",
 		"scope": "xml",
-		"body": "<admin type=\"${1:basic}\" isSuper=\"${2:false}\" resetPassword=\"${0:false}\"/>",
+		"body": "<admin type=\"${1|basic,none,fast|}\" isSuper=\"${2|false,true|}\" resetPassword=\"${3|false,true|}\"/>$0",
 		"description": "The type of admin account on the node."
 	},
 	"TraceTimer":{
@@ -77,19 +83,19 @@
 	"PositionNear":{
 		"prefix": "<PositionNear>",
 		"scope": "xml",
-		"body": "<positionNear target=\"${1:closeNode}\" position=\"${2:1}\" total=\"${3:3}\" extraDistance=\"${4:0.5}\" force=\"${0:false}\"/>",
+		"body": "<positionNear target=\"${1:closeNode}\" position=\"${2:1}\" total=\"${3:3}\" extraDistance=\"${4:0.5}\" force=\"${5|false,true|}\"/>$0",
 		"description": "This positions this computer near the target on the network map."
 	},
 	"TextFile":{
 		"prefix": "<TextFile>",
 		"scope": "xml",
-		"body": "<file path=\"${1:home}\" name=\"${2:readme.txt}\">${0:We're not in Kansas anymore, Toto.}</file>",
+		"body": "<file path=\"${1|home,bin,log,sys|}\" name=\"${2:readme.txt}\">${0:We're not in Kansas anymore, Toto.}</file>",
 		"description": "Will create a basic text file for a node in Hacknet."
 	},
 	"ProgramFile":{
 		"prefix": "<ProgramFile>",
 		"scope": "xml",
-		"body": "<file path=\"${1:bin}\" name=\"${2:FTPSprint.exe}\">${0:#FTP_FAST_EXE#}</file>",
+		"body": "<file path=\"${1:bin}\" name=\"${2|SSHCrack,FTPBounce,WebServerWorm,SMTPOverflow,SQLBufferOverflow,HexClock,Clock,Decypher,DECHead,KBTPortTest,ThemeChanger,eosDeviceScan,SecurityTracer,Tracekill,RTSPCrack,ESequencer,OpShell,TorrentStreamInjector,SSLTrojan,FTPSprint,SignalScramble,MemForensics,MemDumpGenerator,PacificPortcrusher,NetmapOrganizer,ComShell,DNotes,Tuneswap,ClockV2|}.exe\">${3|#SSH_CRACK#,#FTP_CRACK#,#WEB_CRACK#,#SMTP_CRACK#,#SQL_CRACK#,#HEXCLOCK_EXE#,#CLOCK_PROGRAM#,#DECYPHER_PROGRAM#,#DECHEAD_PROGRAM#,#MEDICAL_PROGRAM#,#THEMECHANGER_EXE#,#EOS_SCANNER_EXE#,#SECURITYTRACER_PROGRAM#,#TRACEKILL_EXE#,#RTSP_EXE#,#EXT_SEQUENCER_EXE#,#SHELL_OPENER_EXE#,#TORRENT_EXE#,#SSL_EXE#,#FTP_FAST_EXE#,#SIGNAL_SCRAMBLER_EXE#,#MEM_FORENSICS_EXE#,#MEM_DUMP_GENERATOR#,#PACIFIC_EXE#,#NETMAP_ORGANIZER_EXE#,#SHELL_CONTROLLER_EXE#,#NOTES_DUMPER_EXE#,#DLC_MUSIC_EXE#,#CLOCK_V2_EXE#|}</file>$0",
 		"description": "Creates a template for a program file - FTPSprint used as the template."
 	},
 	"CustomThemeFile":{
@@ -101,7 +107,7 @@
 	"EncryptedFile":{
 		"prefix": "<EncryptedFile>",
 		"scope": "xml",
-		"body": "<encryptedFile path=\"${1:home}\" name=\"${2:spoilers.dec}\" extension=\"${3:.txt}\" ip=\"${4:123.123.123.123}\" header=\"${5:Packaged by Spoiler Inc.}\" ${6:pass=\"${7:secret}\"}>${0:Bit died in Hacknet!}</encryptedFile>",
+		"body": "<encryptedFile path=\"${1|home,sys,bin,log|}\" name=\"${2:spoilers.dec}\" extension=\"${3:.txt}\" ip=\"${4:127.0.0.1}\" header=\"${5:Packaged by Spoiler Inc.}\" ${6:pass=\"${7:unlockme}\"}>${0:Bit died in Hacknet!}</encryptedFile>",
 		"description": "Makes an encrypted file with the option to remove the password."
 	},
 	"DeathRow":{
@@ -157,9 +163,9 @@
 		"body":
 		[
 			"<account username=\"${1:mailPerson}\" password=\"${2:mailPass}\" type=\"2\"/>",
-			"<mailServer name=\"${3:NightMail}\" color=\"${4:0,51,102}\" generateJunk=\"${5:false}\">",
+			"<mailServer name=\"${3:NightMail}\" color=\"${4:0,51,102}\" generateJunk=\"${5|false,true|}\">",
 			"\t<email recipient=\"${6:mailPerson}\" sender=\"${7:John Doe}\" subject=\"$8\">",
-			"\t\t$0",
+			"$0",
 			"\t</email>",
 			"</mailServer>"
 		],
@@ -175,7 +181,7 @@
 		"prefix": "<PointClickerDaemon>",
 		"scope": "xml",
 		"body": "<PointCliker/>",
-		"description": "Yep."
+		"description": "The PointClicker daemon, rack up those points!"
 	},
 	"SongChanger":{
 		"prefix": "<SongChangerDaemon>",
@@ -186,13 +192,13 @@
 	"VariableMissionListing":{
 		"prefix": "<VariableMissionListingDaemon>",
 		"scope": "xml",
-		"body": "<variableMissionListingServer name=\"${1:Entropy}\" iconPath=\"${2:EntropyLogo.png}\" articleFolderPath=\"${3:Docs}\/${4:Entropy}\" color=\"${5:120,200,2}\" assigner=\"${6:false}\" public=\"${7:true}\" title=\"${0:Entropy Mission Listing}\"/>",
+		"body": "<variableMissionListingServer name=\"${1:Entropy}\" iconPath=\"${2:EntropyLogo.${3|png,jpg|}\" articleFolderPath=\"${4:Docs}\/${5:Entropy}\" color=\"${6:120,200,2}\" assigner=\"${7|false,true|}\" public=\"${8|true,false|}\" title=\"${0:Entropy Mission Listing}\"/>",
 		"description": "Lists news articles and missions like on Entropy or SlashBot."
 	},
 	"MissionHubDaemon":{
 		"prefix": "<MissionHubServer>",
 		"scope": "xml",
-		"body": "<missionHubServer groupName=\"${1:CSEC}\" serviceName=\"${2:CSEC Mission Hub}\" missionFolderPath=\"Missions/${3:CSEC}\" themeColor=\"${4:200,10,10}\" lineColor=\"${5:255,80,80}\" backgroundColor=\"${6:20,20,20}\" allowAbandon=\"${0:false}\"/>",
+		"body": "<missionHubServer groupName=\"${1:CSEC}\" serviceName=\"${2:CSEC Mission Hub}\" missionFolderPath=\"Missions/${3:CSEC}\" themeColor=\"${4:200,10,10}\" lineColor=\"${5:255,80,80}\" backgroundColor=\"${6:20,20,20}\" allowAbandon=\"${7|false,true|}\"/>$0",
 		"description": "Creates a CSEC-Style mission board"
 	},
 	"CreditsDaemon":{
@@ -203,7 +209,7 @@
 			"<file path=\"home\" name=\"CreditsData.txt\">%${1:Big Text}",
 			"^${2:Medium Text}",
 			"${3:Small Text}</file>",
-			"<CreditsDaemon Title=\"${4:Credits}\" ButtonText=\"${5:Disable Agent Tracking}\" ConditionalActionSetToRunOnButtonPressPath=\"Actions/${0:CreditsActions.xml}\"/>"
+			"<CreditsDaemon Title=\"${4:Credits}\" ButtonText=\"${5:Disable Agent Tracking}\" ConditionalActionSetToRunOnButtonPressPath=\"Actions/${0:CreditsActions}.xml\"/>"
 		],
 		"description": "Credits server, example credits file included."
 	},
@@ -234,7 +240,7 @@
 	"WhitelistSource":{
 		"prefix": "<WhitelistDaemonSource>",
 		"scope": "xml",
-		"body": "<WhitelistAuthenticatorDaemon SelfAuthenticating=\"${0:false}\" />",
+		"body": "<WhitelistAuthenticatorDaemon SelfAuthenticating=\"${1|false,true|}\" />$0",
 		"description": "This is your basic whitelist server \"host\" type - it wont check incoming connection to itself against it's list. It only serves a protective function against *other* servers."
 	},
 	"WhitelistProtected":{
@@ -248,7 +254,7 @@
 		"scope": "xml",
 		"body":
 		[
-			"<DHSDaemon groupName=\"${1:Bit's Public IRC}\" addsFactionPointOnMissionComplete=\"${2:true}\" autoClearMissionsOnPlayerComplete=\"${3:true}\" themeColor=\"${4:255, 255, 161}\" allowContractAbbandon=\"${5:false}\">",
+			"<DHSDaemon groupName=\"${1:Bit's Public IRC}\" addsFactionPointOnMissionComplete=\"${2|true,false|}\" autoClearMissionsOnPlayerComplete=\"${3|true,false|}\" themeColor=\"${4:255, 255, 161}\" allowContractAbbandon=\"${5|false,true|}\">",
 			"\t<agent name=\"${6:Suns3t}\" pass=\"${7:sunrise}\" color=\"${0:209,74,48}\"/>",
 			"</DHSDaemon>"
 		],
@@ -259,7 +265,7 @@
 		"scope": "xml",
 		"body":
 		[
-			"<LogoDaemon Name=\"${1:Pacific Air}\" ShowsTitle=\"${2:true}\" TextColor=\"${3:0, 220, 220, 200}\" LogoImagePath=\"${4:PacificAir.png}\">${5:Line One}",
+			"<LogoDaemon Name=\"${1:Pacific Air}\" ShowsTitle=\"${2|true,false|}\" TextColor=\"${3:0, 220, 220, 200}\" LogoImagePath=\"${4:PacificAir}.png\">${5:Line One}",
 			"${6:Line Two}",
 			"${0:Line Three}</LogoDaemon>"
 		],
@@ -268,14 +274,14 @@
 	"CustomConnectLogo":{
 		"prefix": "<CustomConnectLogo>",
 		"scope": "xml",
-		"body": "<LogoCustomConnectDisplayDaemon logo=\"${1:PacificAir.png}\" title=\"${1:PacificAir.png}\" overdrawLogo=\"${2:true}\" buttonAlignment=\"${0:left}\"/>",
+		"body": "<LogoCustomConnectDisplayDaemon logo=\"${1:PacificAir}.png\" title=\"${1:PacificAir}.png\" overdrawLogo=\"${2|true,false|}\" buttonAlignment=\"${0:left}\"/>",
 		"description": "LABYRINTHS DLC ONLY - Custom connect display with a nameplate logo and title image like PacificAir had in Labyrinths."
 	},
 	"DatabaseDaemon":{
 		"prefix": "<DatabaseDaemon>",
 		"scope": "xml",
 		"body":[
-			"<DatabaseDaemon Permissions=\"${1:private}\" DataType=\"${2:TextRecord}\" Foldername=\"${3:database}\" Color=\"${4:85,0,150}\" AdminEmailAccount=\"${5:DBAdmin@jmail.com}\" AdminEmailHostID=\"${6:jmail}\" Name=\"${7:Important Database}\">",
+			"<DatabaseDaemon Permissions=\"${1|private,public|}\" DataType=\"${2:TextRecord}\" Foldername=\"${3:database}\" Color=\"${4:85,0,150}\" AdminEmailAccount=\"${5:DBAdmin@jmail.com}\" AdminEmailHostID=\"${6:jmail}\" Name=\"${7:Important Database}\">",
 			"\t<TextRecord>",
 			"\t\t<Title>$8</Title>",
 			"\t\t<Data>$0</Data>",

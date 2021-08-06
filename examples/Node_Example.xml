@@ -2,7 +2,7 @@
 <Computer id="bitpc" name="Bitwise Test PC" type="1" icon="chip" security="0" ip="123.123.123.123" allowsDefaultBootModule="true">
     
     <!-- Security -->
-    <ports>22,80,443</ports>
+    <ports>22,80,443,1433</ports>
     <portsForCrack val="2"/>
     <firewall level="6" solution="cookie" additionalTime="0.0"/>
     <proxy time="1"/>
@@ -77,5 +77,12 @@
             <Data>Contents</Data>
         </TextRecord>
     </DatabaseDaemon>
+
+    <!-- Remake: Program Files -->
+    <file path="bin" name="FTPSprint.exe">#FTP_FAST_EXE#</file>
+
+    <file path="bin" name="TorrentStreamInjector.exe">#TORRENT_EXE#</file>
+
+    <file path="bin" name="ClockV2.exe">#CLOCK_V2_EXE#</file>
 
 </Computer>

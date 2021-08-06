@@ -2,6 +2,8 @@
 
 <!-- Labs Conversation -->
 <ConditionalActions>
+
+    <!-- Legacy version -->
     <Instantly needsMissionComplete="false">
         <AddIRCMessage Author="Kaguya" TargetComp="ircHub" Delay="2.0">Good, player, you're here. New request came through, hack through this network:</AddIRCMessage>
         <AddIRCMessage Author="Kaguya" TargetComp="ircHub" Delay="4.0">!ATTACHMENT:link#%#network01#%#27.33.194.222</AddIRCMessage>
@@ -14,4 +16,12 @@
         <AddIRCMessage Author="D3f4ult" TargetComp="ircHub" Delay="2.0">@channel Got into another node - here's the account.</AddIRCMessage>
         <AddIRCMessage Author="D3f4ult" TargetComp="ircHub" Delay="3.0">!ATTACHMENT:account#%#networkAdmin#%#38.222.125.33#%#admin#%#coffeepot</AddIRCMessage>
     </OnConnect>
+    
+    <!-- Remake -->
+    <Instantly needsMissionComplete="true">
+        
+        <RunFunction FunctionName="addRank" FunctionValue="2" DelayHost="delay" Delay="3.0"/>
+        
+    </Instantly>
+
 </ConditionalActions>

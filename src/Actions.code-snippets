@@ -15,8 +15,11 @@
 		"scope": "xml",
 		"body": 
 		[
-			"<Instantly needsMissionComplete=\"${1:false}\">",
+			"<Instantly needsMissionComplete=\"${1|false,true|}\">",
+			"${2:\t$BLOCK_COMMENT_START It's smart to space out your tags in your code, it makes it much more readable. You can (and should) delete this, by the way. $BLOCK_COMMENT_END}",
+			"\t",
 			"\t$0",
+			"\t",
 			"</Instantly>"
 		],
 		"description": "Instantly run a set of actions."
@@ -56,43 +59,43 @@
 	"RunFunction":{
 		"prefix":"<RunFunction>",
 		"scope": "xml",
-		"body": "<RunFunction FunctionName=\"$1\" FunctionValue=\"${2:0}\" DelayHost=\"${3:delayNode}\" Delay=\"${0:1.0}\"/>",
+		"body": "<RunFunction FunctionName=\"${1|setFaction:factionID,addRank,addRankSilent,addFlags:CSEC_Member,removeFlags:flag1,changeSong,loadConditionalActions:Actions/CoolAction.xml,setHubServer:hubServerID,setAssetServer:assetServerID,playCustomSong:Music/CoolSong.ogg,playCustomSongImmediatley:Music/IntenseSong.ogg,changeSongDLC|}\" FunctionValue=\"${3:0}\" DelayHost=\"${4:delayNode}\" Delay=\"${0:1.0}\"/>",
 		"description": "Run a mission function."
 	},
 	"LoadMission":{
 		"prefix": "<LoadMission>",
 		"scope": "xml",
-		"body": "<LoadMission MissionName=\"Missions/${0:SurpriseMission.xml}\"/>",
+		"body": "<LoadMission MissionName=\"Missions/${0:SurpriseMission}.xml\"/>",
 		"description": "Load a mission and send its email."
 	},
 	"AddAsset":{
 		"prefix": "<AddAsset>",
 		"scope": "xml",
-		"body": "<AddAsset FileName=\"$1\" FileContents=\"$2\" TargetComp=\"${3:playerComp}\" TargetFolderpath=\"${0:home}\"/>",
+		"body": "<AddAsset FileName=\"$1\" FileContents=\"$2\" TargetComp=\"${3:playerComp}\" TargetFolderpath=\"${4|home,bin,log,sys|}\"/>$0",
 		"description": "Remotely add an asset to the target node."
 	},
 	"CopyAsset":{
 		"prefix": "<CopyAsset>",
 		"scope": "xml",
-		"body": "<CopyAsset DestFilePath=\"${1:home}\" DestComp=\"${2:playerComp}\" SourceComp=\"${3:assetNode}\" SourceFileName=\"${4:copycat.txt}\" SourceFilePath=\"${0:home/copy}\"/>",
+		"body": "<CopyAsset DestFilePath=\"${1|home,bin,log,sys|}\" DestComp=\"${2:playerComp}\" SourceComp=\"${3:assetNode}\" SourceFileName=\"${4:copycat.txt}\" SourceFilePath=\"${5|home,bin,log,sys|}\"/>$0",
 		"description": "Copy a file from a remote node."
 	},
 	"AddMissionToHubServer":{
 		"prefix": "<AddMissionToHubServer>",
 		"scope": "xml",
-		"body": "<AddMissionToHubServer MissionFilepath=\"Missions/${1:HubMission.xml}\" TargetComp=\"${2:missionHub}\" AssignmentTag=\"${0:Kaguya}\"/>",
+		"body": "<AddMissionToHubServer MissionFilepath=\"Missions/${1:HubMission}.xml\" TargetComp=\"${2:missionHub}\" ${3:AssignmentTag=\"${0:Kaguya}\"}/>",
 		"description": "Add a mission file to a mission hub."
 	},
 	"RemoveMissionFromHubServer":{
 		"prefix": "<RemoveMissionFromHubServer>",
 		"scope": "xml",
-		"body": "<RemoveMissionFromHubServer MissionFilepath=\"Missions/${1:HubMission.xml}\" TargetComp=\"${0:missionHub}\"/>",
+		"body": "<RemoveMissionFromHubServer MissionFilepath=\"Missions/${1:HubMission}.xml\" TargetComp=\"${0:missionHub}\"/>",
 		"description": "Remove a mission file from a mission hub."
 	},
 	"AddThreadToMissionBoard":{
 		"prefix": "<AddThreadToMissionBoard>",
 		"scope": "xml",
-		"body": "<AddThreadToMissionBoard ThreadFilepath=\"${1:Docs/Thread.txt}\" TargetComp=\"${0:elSec}\"/>",
+		"body": "<AddThreadToMissionBoard ThreadFilepath=\"${1:Docs/Thread}.txt\" TargetComp=\"${0:compID}\"/>",
 		"description": "Add a thread to an /el Sec-like board."
 	},
 	"AddIRCMessage":{
@@ -128,13 +131,13 @@
 	"DeleteFile":{
 		"prefix": "<DeleteFile>",
 		"scope": "xml",
-		"body": "<DeleteFile TargetComp=\"${1:playerComp}\" FilePath=\"${2:home}\" FileName=\"${3:deleteme.txt}\" DelayHost=\"${4:delayNode}\" Delay=\"$0\"/>",
+		"body": "<DeleteFile TargetComp=\"${1:playerComp}\" FilePath=\"${2|home,bin,log,sys|}\" FileName=\"${3:deleteme.txt}\" DelayHost=\"${4:delayNode}\" Delay=\"$0\"/>",
 		"description": "Delete a file."
 	},
 	"AddConditionalActions":{
 		"prefix": "<AddConditionalActions>",
 		"scope": "xml",
-		"body": "<AddConditionalActions Filepath=\"Actions/${1:NextAction.xml}\" DelayHost=\"${2:delayNode}\" Delay=\"$0\"/>",
+		"body": "<AddConditionalActions Filepath=\"Actions/${1:NextAction}.xml\" DelayHost=\"${2:delayNode}\" Delay=\"$0\"/>",
 		"description": "Load in a new action file."
 	},
 	"SaveGame":{
@@ -146,13 +149,13 @@
 	"LaunchHackScript":{
 		"prefix": "<LaunchHackScript>",
 		"scope": "xml",
-		"body": "<LaunchHackScript Filepath=\"${1:Scripts}/${2:HackerScript.txt}\" DelayHost=\"${3:delayNode}\" Delay=\"$4\" SourceComp=\"${5:enemyNode}\" TargetComp=\"${6:playerComp}\" RequireLogsOnSource=\"${7:false}\" RequireSourceIntact=\"${0:true}\"/>",
+		"body": "<LaunchHackScript Filepath=\"${1:Scripts}/${2:HackerScript}.txt\" DelayHost=\"${3:delayNode}\" Delay=\"$4\" SourceComp=\"${5:enemyNode}\" TargetComp=\"${6:playerComp}\" RequireLogsOnSource=\"${7|false,true|}\" RequireSourceIntact=\"${8|true,false|}\"/>$0",
 		"description": "Launch a hacker script. Oo, spooky!"
 	},
 	"SwitchToTheme":{
 		"prefix": "<SwitchToTheme>",
 		"scope": "xml",
-		"body": "<SwitchToTheme ThemePathOrName=\"Themes/${1:ExampleTheme.xml}\" FlickerInDuration=\"${2:3.0}\" DelayHost=\"${3:delayNode}\" Delay=\"$0\"/>",
+		"body": "<SwitchToTheme ThemePathOrName=\"Themes/${1:ExampleTheme}.xml\" FlickerInDuration=\"${2:3.0}\" DelayHost=\"${3:delayNode}\" Delay=\"$0\"/>",
 		"description": "Flicker the player into a new theme."
 	},
 	"ScreenBleed":{
@@ -160,7 +163,7 @@
 		"scope": "xml",
 		"body": 
 		[
-			"<StartScreenBleedEffect AlertTitle=\"${1:Sequencer Attack}\" CompleteAction=\"Actions/${2:ScreenBleedFailed.xml}\" TotalDurationSeconds=\"$3\" DelayHost=\"${4:delayNode}\" Delay=\"$5\">${6:Break into the Moonshine servers}",
+			"<StartScreenBleedEffect AlertTitle=\"${1:Sequencer Attack}\" CompleteAction=\"Actions/${2:ScreenBleedFailed}.xml\" TotalDurationSeconds=\"${3:120}\" DelayHost=\"${4:delayNode}\" Delay=\"5\">${6:Break into the Moonshine servers}",
 			"${7:Delete all files and backups}",
 			"${0:Get out of there!}</StartScreenBleedEffect>"
 		],
@@ -188,7 +191,7 @@
 		"prefix": "<HideNode>",
 		"scope": "xml",
 		"body": "<HideNode DelayHost=\"${1:delayNode}\" Delay=\"$2\" TargetComp=\"${0:companySecurity}\"/>",
-		"description": "Hide a node from the NetMap."
+		"description": "Hide a node from the NetMap. Best to be used in mixture with CrashComputer."
 	},
 	"GivePlayerUserAccount":{
 		"prefix": "<GivePlayerUserAccount>",
@@ -217,7 +220,7 @@
 	"SetLock":{
 		"prefix": "<SetLock>",
 		"scope": "xml",
-		"body": "<SetLock DelayHost=\"${1:delayNode}\" Delay=\"$2\" Module=\"${3:terminal}\" IsLocked=\"${4:true}\" IsHidden=\"${0:false}\"/>",
+		"body": "<SetLock DelayHost=\"${1:delayNode}\" Delay=\"$2\" Module=\"${3|terminal,ram,netmap,display|}\" IsLocked=\"${4|true,false|}\" IsHidden=\"${5|false,true|}\"/>$0",
 		"description": "Locks or hides the specified module. Choices are terminal, ram, netmap, and display."
 	},
 	"AlertIcon":{
@@ -240,8 +243,9 @@
 			"<ConditionalActions>",
 			"\t<Instantly>",
 			"\t\t<StartScreenBleedEffect AlertTitle=\"${1:Sequencer Attack}\" CompleteAction=\"Actions/${2:SequencerFailed.xml}\" TotalDurationSeconds=\"${3:120.0}\" DelayHost=\"${4:delayNode}\" Delay=\"${5:12.0}\">${6:Step 1}",
-			"\t\t${7:Step 2}",
-			"\t\t${8:Step 3}</StartScreenBleedEffect>",
+			"${7:Step 2}",
+			"${8:Step 3}</StartScreenBleedEffect>",
+			"$BLOCK_COMMENT_START Hacknet will do weird formatting if you tab the content of a tag, so best to just not... not tab. BLOCK_COMMENT_END",
 			"\t\t<RunFunction FunctionName=\"playCustomSongImmediately:Music/${9:RollerMobster}.ogg\"/>",
 			"\t\t<SwitchToThem ThemePathOrName=\"Themes/${10:SequencerTheme.xml}\" FlickerInDuration=\"${11:2.0}\" DelayHost=\"${12:delayNode}\" Delay=\"${13:12.0}\"/>",
 			"\t</Instantly>",

@@ -5,15 +5,15 @@
 		"body":
 		[
 			"<?xml version = \"1.0\" encoding = \"UTF-8\" ?>",
-			"<mission id=\"${1:startingMission}\" activeCheck=\"${2:false}\" shouldIgnoreSenderVerification=\"${3:false}\">",
+			"<mission id=\"${1:startingMission}\" activeCheck=\"${2|false,true|}\" shouldIgnoreSenderVerification=\"${3|false,true|}\">",
 			"\t<goals>",
 			"\t\t<goal type=\"${4:filedeletion}\" target=\"${5:clearNode}\" file=\"${6:deleteme.txt}\" path=\"${7:home}\"/>",
 			"\t</goals>",
 			"",
-			"\t<missionStart val=\"${8:3}\">${9:changeSong}</missionStart>",
-			"\t<missionEnd>${10:loadConditionalActions:${11:Actions/MissionEnd.xml}}</missionEnd>",
+			"\t<missionStart val=\"${8:3}\">${9|setFaction:factionID,addRank,addRankSilent,addFlags:CSEC_Member,removeFlags:flag1,changeSong,loadConditionalActions:Actions/CoolAction.xml,setHubServer:hubServerID,setAssetServer:assetServerID,playCustomSong:Music/CoolSong.ogg,playCustomSongImmediatley:Music/IntenseSong.ogg,changeSongDLC|}</missionStart>",
+			"\t<missionEnd>${10|setFaction:factionID,addRank,addRankSilent,addFlags:CSEC_Member,removeFlags:flag1,changeSong,loadConditionalActions:Actions/CoolAction.xml,setHubServer:hubServerID,setAssetServer:assetServerID,playCustomSong:Music/CoolSong.ogg,playCustomSongImmediatley:Music/IntenseSong.ogg,changeSongDLC|}</missionEnd>",
 			"",
-			"\t<nextMission IsSilent=\"${12:false}\">${13:NONE}</nextMission>",
+			"\t<nextMission IsSilent=\"${12|false,true|}\">${13|NONE,Missions/NextMission.xml|}</nextMission>",
 			"\t<branchMissions>",
 			"${14:\t\t<branch>${15:Missions/BranchMission.xml}</branch>}",
 			"\t</branchMissions>",
@@ -42,13 +42,13 @@
 			"<?xml version = \"1.0\" encoding = \"UTF-8\" ?>",
 			"<mission id=\"${1:sequencerMission}\" activeCheck=\"true\">",
 			"\t<goals>",
-			"\t\t<goal type=\"clearfolder\" target=\"${2:finaleNode}\" path=\"${3:home}\"/>",
-			"\t\t<goal type=\"clearfolder\" target=\"${2:finaleNode}\" path=\"${4:sys}\"/>",
+			"\t\t<goal type=\"clearfolder\" target=\"${2:finaleNode}\" path=\"${3|home,bin,log,sys|}\"/>",
+			"\t\t<goal type=\"clearfolder\" target=\"${2:finaleNode}\" path=\"${4|sys,home,bin,log|}\"/>",
 			"\t</goals>",
 			"",
 			"\t<missionEnd>addFlags:${5:seqComplete}</missionEnd>",
 			"",
-			"\t<nextMission IsSilent=\"false\">${6:NONE}</nextMission>",
+			"\t<nextMission IsSilent=\"false\">${6|NONE,Missions/FinaleMission.xml|}</nextMission>",
 			"",
 			"\t<posting title=\"${7:Sequencer Mission}\">$8</posting>",
 			"",
@@ -69,31 +69,31 @@
 	"MissionGoalFileDeletion":{
 		"prefix": "<FileDeletionGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"filedeletion\" target=\"${1:nodeID}\" file=\"${2:deleteme.txt}\" path=\"${0:home}\"/>",
+		"body": "<goal type=\"filedeletion\" target=\"${1:nodeID}\" file=\"${2:deleteme.txt}\" path=\"${3|home,bin,log,sys|}\"/>$0",
 		"description": "Task to delete the file on node target, at path/file"
 	},
 	"ClearFolder":{
 		"prefix": "<ClearFolderGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"clearfolder\" target=\"${1:nodeID}\" path=\"${0:sys}\"/>",
+		"body": "<goal type=\"clearfolder\" target=\"${1:nodeID}\" path=\"${2|sys,home,bin,log|}\"/>$0",
 		"description": "Task to delete ALL files on node target, in the folder at path"
 	},
 	"FileDownload":{
 		"prefix": "<FileDownloadGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"filedownload\" target=\"${1:nodeID}\" file=\"${2:downloadme.txt}\" path=\"${0:home}\"/>",
+		"body": "<goal type=\"filedownload\" target=\"${1:nodeID}\" file=\"${2:downloadme.txt}\" path=\"${3|home,bin,log,sys|}\"/>$0",
 		"description": "Task to download the file at the path"
 	},
 	"FileChange":{
 		"prefix": "<FileChangeGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"filechange\" target=\"${1:nodeID}\" file=\"${2:changeme.txt}\" path=\"${3:home}\" keyword=\"${4:hacknet}\" caseSensetive=\"${0:false}\"/>",
+		"body": "<goal type=\"filechange\" target=\"${1:nodeID}\" file=\"${2:changeme.txt}\" path=\"${3|home,bin,log,sys|}\" keyword=\"${4:hacknet}\" caseSensetive=\"${5|false,true|}\"/>$0",
 		"description": "Task to add the text specified by keyword to the specified file. This is usually achieved by the \"replace\" command. It's possible to make the keyword a larger block and task the player to replace one file with another."
 	},
 	"FileChangeRemove":{
 		"prefix": "<FileChangeRemovalGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"filechange\" target=\"${1:nodeID}\" file=\"${2:changeme.txt}\" path=\"${3:home}\" keyword=\"${0:kaguya}\" removal=\"true\"/>",
+		"body": "<goal type=\"filechange\" target=\"${1:nodeID}\" file=\"${2:changeme.txt}\" path=\"${3|home,bin,log,sys|}\" keyword=\"${0:kaguya}\" removal=\"true\"/>",
 		"description": "Task to remove the text specified by keyword to the specified file. This is usually achieved by the \"replace\" command. The extra attribute \"removal\" tasks the player with removing a block of text from a file. Combining this with another filechange task can require a \"replacement\" of text (removing some, adding a different block)."
 	},
 	"GetAdmin":{
@@ -111,19 +111,19 @@
 	"HasFlag":{
 		"prefix": "<HasFlagGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"hasflag\" target=\"$0\"/>",
+		"body": "<goal type=\"hasflag\" target=\"${0:someFlag,someOtherFlag}\"/>",
 		"description": "This will only accept if the target flag has been set."
 	},
 	"UploadFile":{
 		"prefix": "<UploadFileGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"fileupload\" target=\"${1:nodeID}\" file=\"${2:uploadme.txt}\" path=\"${3:home}\" destTarget=\"${4:dropNodeID}\" destPath=\"${0:Drop}\"/>",
+		"body": "<goal type=\"fileupload\" target=\"${1:nodeID}\" file=\"${2:uploadme.txt}\" path=\"${3|home,bin,log,sys|}\" destTarget=\"${4:dropNodeID}\" destPath=\"${5|Drop/Uploads,Drop,home,bin,log,sys|}\"/>$0",
 		"description": "Task to require a string passed in via the \"Additional Info\" field in the reply email screen."
 	},
 	"UploadFileDecrypted":{
 		"prefix": "<UploadFileDecryptedGoal>",
 		"scope": "xml",
-		"body": "<goal type=\"fileupload\" target=\"${1:nodeID}\" file=\"${2:uploadme}.dec\" path=\"${3:home}\" destTarget=\"${4:dropNodeID}\" destPath=\"${5:Drop}\" decrypt=\"true\" decryptPass=\"${0:password}\"/>",
+		"body": "<goal type=\"fileupload\" target=\"${1:nodeID}\" file=\"${2:uploadme}.dec\" path=\"${3|home,bin,log,sys|}\" destTarget=\"${4:dropNodeID}\" destPath=\"${5|Drop/Uploads,Drop,home,bin,log,sys|}\" decrypt=\"true\" decryptPass=\"${0:password}\"/>",
 		"description": "For uploading encrypted files - put the encrypted name here (ending with .dec usually). It doesn't matter what the filename of the decrypted one becomes."
 	},
 	"GetString":{
@@ -148,7 +148,7 @@
 		"prefix": "<SendEmailGoal>",
 		"scope": "xml",
 		"body": "<goal type=\"sendemail\" mailServer=\"${1:jmail}\" recipient=\"${2:mailGuy}\" subject=\"${0:Important!}\"/>",
-		"description": "NOTE: THIS IS KNOWN TO BE A BUGGY GOAL - Task to have an email sent to a specified address with a defined subject."
+		"description": "NOTE: THIS GOAL USUALLY DOES *NOT* WORK - Task to have an email sent to a specified address with a defined subject."
 	},
 	"GetAdminPassword":{
 		"prefix": "<GetAdminPasswordGoal>",
