@@ -4,7 +4,7 @@
         <StartScreenBleedEffect AlertTitle="Sequencer Attack" CompleteAction="Actions/SequencerFailed.xml" TotalDurationSeconds="135.0" DelayHost="delay" Delay="11.5">Break into node
         Delete stuff
         Get out</StartScreenBleedEffect>
-        <RunFunction FunctionName="playCustomSongImmediately:Music/RollerMobster.ogg"/>
+        <RunFunction FunctionName="playCustomSongImmediatley:Music/RollerMobster.ogg"/>
         <SwitchToThem ThemePathOrName="Themes/SequencerTheme.xml" FlickerInDuration="2.0" DelayHost="delay" Delay="12.0"/>
     </Instantly>
     

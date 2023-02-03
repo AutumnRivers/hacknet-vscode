@@ -246,7 +246,7 @@
 			"${7:Step 2}",
 			"${8:Step 3}</StartScreenBleedEffect>",
 			"$BLOCK_COMMENT_START Hacknet will do weird formatting if you tab the content of a tag, so best to just not... not tab. BLOCK_COMMENT_END",
-			"\t\t<RunFunction FunctionName=\"playCustomSongImmediately:Music/${9:RollerMobster}.ogg\"/>",
+			"\t\t<RunFunction FunctionName=\"playCustomSongImmediatley:Music/${9:RollerMobster}.ogg\"/>",
 			"\t\t<SwitchToThem ThemePathOrName=\"Themes/${10:SequencerTheme.xml}\" FlickerInDuration=\"${11:2.0}\" DelayHost=\"${12:delayNode}\" Delay=\"${13:12.0}\"/>",
 			"\t</Instantly>",
 			"\t",
